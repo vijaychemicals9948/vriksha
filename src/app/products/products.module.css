@@ -1,0 +1,310 @@
+﻿/* GLOBAL RESET — remove blue underline from ALL links */
+.main a {
+    text-decoration: none;
+}
+
+/* Layout */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ─────── HERO ─────── */
+.hero {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.heroBackground {
+    position: absolute;
+    inset: 0;
+    background: url('/images/brass-on-gold-metalart-banner.jpg') center center / contain no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+.heroOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.88) 100%);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 300px;
+}
+
+    .heroContent h1 {
+        font-size: 4.8rem;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 1.2rem;
+        letter-spacing: -2px;
+        line-height: 1.05;
+        text-shadow: 0 4px 30px rgba(0,0,0,0.7);
+    }
+
+.heroSubtitle {
+    font-size: 1.35rem;
+    color: #fcd34d;
+    max-width: 780px;
+    margin: 0 auto 2.6rem;
+    line-height: 1.7;
+    font-weight: 400;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.6);
+}
+
+.heroButtons {
+    display: flex;
+    gap: 1.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* PRIMARY BUTTON */
+.btnPrimary {
+    background: linear-gradient(135deg, #ea580c, #f97316);
+    color: white !important;
+    padding: 1rem 2.4rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: .35s ease;
+    box-shadow: 0 12px 28px rgba(234, 88, 12, 0.45);
+}
+
+    .btnPrimary:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        box-shadow: 0 18px 38px rgba(234, 88, 12, 0.50);
+    }
+
+/* SECONDARY BUTTON */
+.btnSecondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.38);
+    padding: 1rem 2.4rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    backdrop-filter: blur(12px);
+    transition: .35s ease;
+}
+
+    .btnSecondary:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.65);
+    }
+
+/* ─────── BREADCRUMB ─────── */
+.breadcrumb {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+
+    .breadcrumb a {
+        color: #64748b !important;
+        transition: color .25s ease;
+    }
+
+        .breadcrumb a:hover {
+            color: #334155 !important;
+        }
+
+/* ─────── SECTION HEADER ─────── */
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sectionTitle {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.sectionDesc {
+    color: #64748b;
+    margin-top: 0.5rem;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filterSelect {
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    font-size: 0.95rem;
+}
+
+/* ─────── GRID / CARDS ─────── */
+.collectionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.2rem;
+    margin-bottom: 4.2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.4s ease;
+}
+
+    .card:hover {
+        transform: translateY(-12px);
+    }
+
+.cardImage {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+}
+
+    .cardImage img {
+        transition: transform 0.6s ease;
+    }
+
+.card:hover .cardImage img {
+    transform: scale(1.08);
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.6));
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.card:hover .cardOverlay {
+    opacity: 1;
+}
+
+.tag {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(255,255,255,0.9);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.cardContent {
+    padding: 1.75rem;
+}
+
+.cardTitle {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+}
+
+.cardSubtitle {
+    color: #64748b;
+    margin-bottom: 1.4rem;
+    font-size: 1.02rem;
+}
+
+.cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stylesCount {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.viewLink {
+    color: #ea580c !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: gap 0.3s ease;
+}
+
+.card:hover .viewLink {
+    gap: 0.75rem;
+}
+
+/* ─────── CTA STRIP ─────── */
+.ctaStrip {
+    background: linear-gradient(135deg, #fffaf0, #fef3c7);
+    border: 1px solid #fde68a;
+    border-radius: 16px;
+    padding: 3rem;
+    margin: 4rem 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+}
+
+    .ctaStrip h4 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+/* ─────── RESPONSIVE ─────── */
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 3.3rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.15rem;
+    }
+
+    .heroBackground {
+        background-attachment: scroll;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

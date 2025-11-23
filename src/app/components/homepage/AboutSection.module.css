@@ -1,0 +1,178 @@
+.wrapper {
+    width: 100%;
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Outer container: holds the animated frame and content */
+.container {
+    position: relative; /* for absolute frame lines */
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    padding: 2rem;
+    overflow: visible;
+    /* base subtle transform so whole block appears gently (optional) */
+    opacity: 1;
+}
+
+/* inner layout (keeps previous two-column design) */
+.inner {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* fallback thin border visible before animation starts */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+/* frame lines (top, bottom expand horizontally; left, right expand vertically) */
+.frameLine {
+    position: absolute;
+    background: #5a2626;
+    transform-origin: left center;
+    will-change: transform, opacity;
+    opacity: 0.0; /* will fade in during animation */
+}
+
+/* top and bottom bars */
+.lineTop,
+.lineBottom {
+    height: 3px;
+    left: 2rem; /* inset to match look in design */
+    right: 2rem;
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+
+.lineTop {
+    top: 0.6rem;
+}
+
+.lineBottom {
+    bottom: 0.6rem;
+    transform-origin: left center;
+}
+
+/* left and right short vertical pieces */
+.lineLeft,
+.lineRight {
+    width: 3px;
+    top: 2rem; /* small offset from top */
+    bottom: 2rem;
+    transform-origin: top center;
+    transform: scaleY(0);
+}
+
+.lineLeft {
+    left: 0.6rem;
+}
+
+.lineRight {
+    right: 0.6rem;
+}
+
+/* when in view, expand lines with a pleasing timing */
+.container.inView .frameLine {
+    opacity: 1;
+}
+
+/* top expands left->right, slight delay for visual rhythm */
+.container.inView .lineTop {
+    transform: scaleX(1);
+    transition: transform 2700ms cubic-bezier(0.22, 1, 0.36, 1) 280ms, opacity 200ms ease 80ms;
+}
+
+/* right vertical expands top->bottom with a small additional delay */
+.container.inView .lineRight {
+    transform: scaleY(1);
+    transition: transform 3520ms cubic-bezier(0.22, 1, 0.36, 1) 660ms, opacity 200ms ease 260ms;
+}
+
+/* bottom expands after right */
+.container.inView .lineBottom {
+    transform: scaleX(1);
+    transition: transform 4800ms cubic-bezier(0.22, 1, 0.36, 1) 820ms, opacity 200ms ease 420ms;
+}
+
+/* left expands last for a balanced frame reveal */
+.container.inView .lineLeft {
+    transform: scaleY(1);
+    transition: transform 5520ms cubic-bezier(0.22, 1, 0.36, 1) 600ms, opacity 200ms ease 600ms;
+}
+
+/* Image & text styles (kept similar to earlier) */
+.imageBox {
+    flex: 1;
+    min-width: 40%;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+}
+
+.textBox {
+    flex: 1;
+    min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.text {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Responsive: stack on small screens; reduce frame insets */
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+    }
+
+    .imageBox,
+    .textBox {
+        min-width: 100%;
+    }
+
+    .lineTop,
+    .lineBottom {
+        left: 1rem;
+        right: 1rem;
+    }
+
+    .lineLeft,
+    .lineRight {
+        top: 1.25rem;
+        bottom: 1.25rem;
+    }
+}
+
+/* Reduced motion: skip transitions and show final state */
+@media (prefers-reduced-motion: reduce) {
+    .frameLine,
+    .container::before {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
