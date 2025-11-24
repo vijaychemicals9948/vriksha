@@ -3,6 +3,66 @@
   "WorkspaceRootPath": "F:\\websites\\vriksha\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\HomePageSwitcher.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\HomePageSwitcher.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV2.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\HeroV2.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\Hero.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV1.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\HeroV1.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV2.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\NavbarV2.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\Hamburger.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\Hamburger.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\Navbar.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV1.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\NavbarV1.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\navbar\\Navbar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\layout.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\layout.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\products\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\products\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\HeroSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\products\\24k-gold-coated-art\\Cover.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -27,20 +87,12 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\products\\24k-gold-coated-art\\Cover.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\globals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\AboutSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\AboutSection.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\products\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\products\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\products\\products.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -51,36 +103,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\products\\apsara-series\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Navbar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Navbar.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Navbar.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Navbar.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Hamburger.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Hamburger.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Hamburger.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Hamburger.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\page.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\Hero.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Footer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Footer.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\homepage\\HeroSection.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\products\\apsara-series\\ApsaraSeries.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -89,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\components\\Footer.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\components\\Footer.module.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\src\\app\\layout.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\app\\layout.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\websites\\vriksha\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -106,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,46 +134,176 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductsGrid.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
-              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
-              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
-              "ViewState": "AgIAACEAAAAAAAAAAAAmwDcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-23T09:35:13.32Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductsGrid.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
-              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
-              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "NavbarV2.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV2.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\NavbarV2.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV2.tsx",
+              "RelativeToolTip": "src\\app\\components\\navbar\\NavbarV2.tsx",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwBIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-23T09:35:08.488Z",
+              "WhenOpened": "2025-11-24T06:55:59.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Cover.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
-              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
-              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-23T08:59:12.327Z",
+              "DocumentIndex": 1,
+              "Title": "HeroV2.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV2.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\HeroV2.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV2.tsx",
+              "RelativeToolTip": "src\\app\\components\\homepage\\HeroV2.tsx",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-24T06:55:03.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HeroV1.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV1.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\HeroV1.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroV1.tsx",
+              "RelativeToolTip": "src\\app\\components\\homepage\\HeroV1.tsx",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-23T15:43:41.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NavbarV1.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV1.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\NavbarV1.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\NavbarV1.tsx",
+              "RelativeToolTip": "src\\app\\components\\navbar\\NavbarV1.tsx",
+              "ViewState": "AgIAADMAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-23T15:42:34.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HomePageSwitcher.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HomePageSwitcher.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\HomePageSwitcher.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HomePageSwitcher.tsx",
+              "RelativeToolTip": "src\\app\\components\\homepage\\HomePageSwitcher.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-23T15:41:42.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Navbar.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\Navbar.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.tsx",
+              "RelativeToolTip": "src\\app\\components\\navbar\\Navbar.tsx",
+              "ViewState": "AgIAADMAAAAAAAAAAAAuwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-18T07:53:57.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Navbar.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.module.css",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\Navbar.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Navbar.module.css",
+              "RelativeToolTip": "src\\app\\components\\navbar\\Navbar.module.css",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-18T07:54:09.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Hero.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\Hero.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx",
+              "RelativeToolTip": "src\\app\\components\\homepage\\Hero.tsx",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-10-21T15:56:42.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HeroSection.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\HeroSection.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css",
+              "RelativeToolTip": "src\\app\\components\\homepage\\HeroSection.module.css",
+              "ViewState": "AgIAABMAAAAAAAAAAAAqwDIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-21T15:57:33.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "globals.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\globals.css",
+              "RelativeDocumentMoniker": "src\\app\\globals.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\globals.css",
+              "RelativeToolTip": "src\\app\\globals.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-18T07:32:03.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Hamburger.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.tsx",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\Hamburger.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.tsx",
+              "RelativeToolTip": "src\\app\\components\\navbar\\Hamburger.tsx",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-11-22T10:30:52.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "layout.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\layout.tsx",
+              "RelativeDocumentMoniker": "src\\app\\layout.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\layout.tsx",
+              "RelativeToolTip": "src\\app\\layout.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-18T07:54:17.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Hamburger.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.module.css",
+              "RelativeDocumentMoniker": "src\\app\\components\\navbar\\Hamburger.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\navbar\\Hamburger.module.css",
+              "RelativeToolTip": "src\\app\\components\\navbar\\Hamburger.module.css",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAmwCsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-22T10:30:58.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Cover.tsx",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.tsx",
               "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\Cover.tsx",
@@ -166,46 +316,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "24k-gold-coated-art.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
-              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
-              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Cover.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
+              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
+              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\Cover.module.css",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-23T04:24:03.31Z",
+              "WhenOpened": "2025-11-23T08:59:12.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "page.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\page.tsx",
-              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\page.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\page.tsx",
-              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\page.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-23T04:23:55.66Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "products.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\products.module.css",
-              "RelativeDocumentMoniker": "src\\app\\products\\products.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\products.module.css",
-              "RelativeToolTip": "src\\app\\products\\products.module.css",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-22T11:24:16.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "page.tsx",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\page.tsx",
               "RelativeDocumentMoniker": "src\\app\\products\\page.tsx",
@@ -218,20 +342,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AboutSection.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.module.css",
-              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\AboutSection.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.module.css",
-              "RelativeToolTip": "src\\app\\components\\homepage\\AboutSection.module.css",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAmwLIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-22T10:44:34.716Z",
+              "DocumentIndex": 11,
+              "Title": "page.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\page.tsx",
+              "RelativeDocumentMoniker": "src\\app\\page.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\page.tsx",
+              "RelativeToolTip": "src\\app\\page.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2025-09-18T07:31:46.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 22,
               "Title": "AboutSection.tsx",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.tsx",
               "RelativeDocumentMoniker": "src\\app\\components\\homepage\\AboutSection.tsx",
@@ -244,98 +368,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Hamburger.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Hamburger.module.css",
-              "RelativeDocumentMoniker": "src\\app\\components\\Hamburger.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\Hamburger.module.css",
-              "RelativeToolTip": "src\\app\\components\\Hamburger.module.css",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAswJUAAABDAAAAAAAAAA==",
+              "DocumentIndex": 21,
+              "Title": "AboutSection.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.module.css",
+              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\AboutSection.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\AboutSection.module.css",
+              "RelativeToolTip": "src\\app\\components\\homepage\\AboutSection.module.css",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAmwLIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-11-22T10:30:58.269Z",
+              "WhenOpened": "2025-11-22T10:44:34.716Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Hamburger.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Hamburger.tsx",
-              "RelativeDocumentMoniker": "src\\app\\components\\Hamburger.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\Hamburger.tsx",
-              "RelativeToolTip": "src\\app\\components\\Hamburger.tsx",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-11-22T10:30:52.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Navbar.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Navbar.tsx",
-              "RelativeDocumentMoniker": "src\\app\\components\\Navbar.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\Navbar.tsx",
-              "RelativeToolTip": "src\\app\\components\\Navbar.tsx",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAewCEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-09-18T07:53:57.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "globals.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\globals.css",
-              "RelativeDocumentMoniker": "src\\app\\globals.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\globals.css",
-              "RelativeToolTip": "src\\app\\globals.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "products.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\products.module.css",
+              "RelativeDocumentMoniker": "src\\app\\products\\products.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\products.module.css",
+              "RelativeToolTip": "src\\app\\products\\products.module.css",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-18T07:32:03.561Z",
+              "WhenOpened": "2025-11-22T11:24:16.937Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "page.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\page.tsx",
-              "RelativeDocumentMoniker": "src\\app\\page.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\page.tsx",
-              "RelativeToolTip": "src\\app\\page.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\page.tsx",
+              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\page.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\page.tsx",
+              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\page.tsx",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-09-18T07:31:46.067Z",
+              "WhenOpened": "2025-11-23T04:23:55.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "24k-gold-coated-art.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
+              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
+              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\24k-gold-coated-art.module.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-23T04:24:03.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "Hero.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx",
-              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\Hero.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\Hero.tsx",
-              "RelativeToolTip": "src\\app\\components\\homepage\\Hero.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "Title": "ProductsGrid.tsx",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
+              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
+              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.tsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-10-21T15:56:42.378Z",
+              "WhenOpened": "2025-11-23T09:35:08.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Navbar.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Navbar.module.css",
-              "RelativeDocumentMoniker": "src\\app\\components\\Navbar.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\Navbar.module.css",
-              "RelativeToolTip": "src\\app\\components\\Navbar.module.css",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAqwFoAAAARAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "ProductsGrid.module.css",
+              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
+              "RelativeDocumentMoniker": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
+              "ToolTip": "F:\\websites\\vriksha\\src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
+              "RelativeToolTip": "src\\app\\products\\24k-gold-coated-art\\ProductsGrid.module.css",
+              "ViewState": "AgIAACEAAAAAAAAAAAAmwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-18T07:54:09.85Z",
+              "WhenOpened": "2025-11-23T09:35:13.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "page.tsx",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\apsara-series\\page.tsx",
               "RelativeDocumentMoniker": "src\\app\\products\\apsara-series\\page.tsx",
@@ -348,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "Footer.tsx",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Footer.tsx",
               "RelativeDocumentMoniker": "src\\app\\components\\Footer.tsx",
@@ -361,33 +472,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "HeroSection.module.css",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css",
-              "RelativeDocumentMoniker": "src\\app\\components\\homepage\\HeroSection.module.css",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\components\\homepage\\HeroSection.module.css",
-              "RelativeToolTip": "src\\app\\components\\homepage\\HeroSection.module.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-21T15:57:33.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "layout.tsx",
-              "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\layout.tsx",
-              "RelativeDocumentMoniker": "src\\app\\layout.tsx",
-              "ToolTip": "F:\\websites\\vriksha\\src\\app\\layout.tsx",
-              "RelativeToolTip": "src\\app\\layout.tsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswBsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2025-09-18T07:54:17.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "ApsaraSeries.module.css",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\products\\apsara-series\\ApsaraSeries.module.css",
               "RelativeDocumentMoniker": "src\\app\\products\\apsara-series\\ApsaraSeries.module.css",
@@ -400,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "Footer.module.css",
               "DocumentMoniker": "F:\\websites\\vriksha\\src\\app\\components\\Footer.module.css",
               "RelativeDocumentMoniker": "src\\app\\components\\Footer.module.css",
@@ -413,7 +498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 28,
               "Title": "package.json",
               "DocumentMoniker": "F:\\websites\\vriksha\\package.json",
               "RelativeDocumentMoniker": "package.json",

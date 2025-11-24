@@ -1,0 +1,36 @@
+﻿.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    transition: background-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* container centers logo and keeps hamburger left */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    height: 150px; /* Updated */
+    display: flex;
+    align-items: center; /* vertical center */
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+
+/* left (hamburger) placed absolute left */
+/* logo on the left */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+    .logo img {
+        display: block;
+    }
+
+
+

@@ -5,9 +5,8 @@
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\homepage",
-    "\\src\\app\\products",
-    "\\src\\app\\products\\24k-gold-coated-art"
+    "\\src\\app\\components\\navbar"
   ],
-  "SelectedNode": "\\src\\app\\products\\24k-gold-coated-art\\Cover.tsx",
+  "SelectedNode": "\\src\\app\\components\\homepage\\HomePageSwitcher.tsx",
   "PreviewInSolutionExplorer": false
 }

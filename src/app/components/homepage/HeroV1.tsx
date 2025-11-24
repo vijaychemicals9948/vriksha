@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./HeroSection.module.css";
 
-const images = ["/images/bg-red.jpg"];
+const images = ["/images/bg3.jpg"];
 
 export default function HeroSection() {
     const [index] = useState(0);

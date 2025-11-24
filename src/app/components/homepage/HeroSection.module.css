@@ -10,7 +10,7 @@
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     opacity: 0;
     transition: opacity 1.5s ease-in-out; /* fade effect */
@@ -25,9 +25,32 @@
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.25); /* adjust darkness here */
+    background: rgba(0, 0, 0, 0.00); /* adjust darkness here */
     pointer-events: none;
     z-index: 0;
 }
 
+
+
+/* text container */
+.textBox {
+    position: absolute;
+    left: 50%;
+    top: 75%; /* adjust vertical position (55% = middle ke thoda neeche) */
+    transform: translate(-50%, -50%);
+    width: max-content; /* so left align works perfectly */
+    text-align: left; /* left alignment */
+    z-index: 2;
+}
+
+    /* hero heading */
+    .textBox h1 {
+        font-size: 2.8rem;
+        font-weight: 900;
+        font-family: "HelveticaBlack", Arial, sans-serif;
+        color: #2e2c2d;
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+        margin: 0;
+    }
 

@@ -11,19 +11,26 @@
     width: 44px;
     height: 44px;
     align-items: center;
-    transition: transform 200ms ease;
-    z-index: 3001; /* always above overlay */
-    position: relative; /* make z-index effective */
+    position: relative;
+    z-index: 3001;
     pointer-events: auto;
+    /* unified transition */
+    transition: gap 350ms cubic-bezier(.25, .8, .25, 1), transform 300ms cubic-bezier(.25, .8, .25, 1);
 }
+
 
     .hamburger:focus {
         outline: 3px solid rgba(0, 123, 255, 0.15);
         border-radius: 8px;
     }
 
+
+    .hamburger:hover {
+        gap: 8.4px;
+    }
+
 .line {
-    width: 32px;
+    width: 22px;
     height: 2px;
     background-color: black;
     display: block;
