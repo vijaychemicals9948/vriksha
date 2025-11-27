@@ -1,11 +1,16 @@
-import HomePageSwitcher from "./components/homepage/HomePageSwitcher";
+
 import AboutSection from "./components/homepage/AboutSection";
+import HeroSection from "./components/homepage/Hero"
+import OurStorySection from "./components/homepage/OurStorySection"; // adjust path if needed
 
 export default function HomePage() {
     return (
         <>
-            <HomePageSwitcher />
-            <AboutSection />
+            <HeroSection />
+            <OurStorySection />
+
+            
         </>
     );
 }
+/* <AboutSection /> */

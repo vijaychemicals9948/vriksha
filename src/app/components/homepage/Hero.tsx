@@ -1,12 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./HeroSection.module.css";
 
-const images = ["/images/bg-red.jpg"];
+const images = [
+    "/homepage/hero1.png",
+    "/homepage/hero2.png",
+    "/homepage/hero3.png",
+    "/homepage/hero6.png",
+];
 
 export default function HeroSection() {
-    const [index] = useState(0);
+    const [index, setIndex] = useState(0);
+
+    // Auto-slide every 4 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(i => (i + 1) % images.length);
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section className={styles.hero}>
@@ -15,20 +29,22 @@ export default function HeroSection() {
                     key={src}
                     className={`${styles.slide} ${i === index ? styles.active : ""}`}
                     style={{ backgroundImage: `url(${src})` }}
-                ></div>
+                />
             ))}
 
             {/* Dark overlay */}
             <div className={styles.overlay}></div>
 
-            {/* TEXT OVERLAY */}
-            {/*<div className={styles.textBox}>
-                <h1>
-                    Timeless brass,<br />
-                    draped in the<br />
-                    richness of silk
-                </h1>
-            </div> */}
+            {/* Dots navigation */}
+            <div className={styles.dots}>
+                {images.map((_, i) => (
+                    <div
+                        key={i}
+                        className={`${styles.dot} ${i === index ? styles.activeDot : ""}`}
+                        onClick={() => setIndex(i)}
+                    ></div>
+                ))}
+            </div>
         </section>
     );
 }

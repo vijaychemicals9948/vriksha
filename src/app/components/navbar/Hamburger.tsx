@@ -71,7 +71,7 @@ export default function Hamburger({ open, setOpen }: Props) {
         { href: "/", label: "Home" },
         { href: "/about", label: "Our Story" },
         { href: "/services", label: "Our Services" },
-        { href: "/products", label: "Explore Collection" },
+        { href: "/products", label: "Our Products" },
         { href: "/clients", label: "Our Clients" },
         { href: "/blog", label: "Blog" },
         { href: "/contact", label: "Contact" },

@@ -1,0 +1,204 @@
+﻿.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+/* ensure content sits above the outline */
+.container {
+    width: 100%;
+    padding: 30px;
+    max-width: 1200px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: relative; /* container will be the positioning context */
+    z-index: 2; /* content sits above the outline */
+}
+
+    /* REPLACE your existing .container::before with this block */
+    .container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 300px; /* keep your original inset */
+        right: 0;
+        border: 4px solid #98969b;
+        border-radius: 0px;
+        pointer-events: none;
+        z-index: 0;
+        background: transparent;
+        box-sizing: border-box;
+        animation: outlineDraw 4.6s cubic-bezier(0.22,1,0.36,1) 120ms forwards;
+        opacity: 0;
+        animation-delay: 120ms;
+        animation-name: outlineDraw, outlineFade;
+        animation-duration: 4.6s, 220ms;
+        animation-timing-function: cubic-bezier(0.22,1,0.36,1), ease;
+        animation-fill-mode: forwards, forwards;
+    }
+
+/* small fade-in at start so border doesn't pop abruptly */
+@keyframes outlineFade {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/* LEFT -> TOP -> RIGHT -> BOTTOM (clockwise) using clip-path */
+@keyframes outlineDraw {
+    /* STEP 0 — Everything hidden */
+    0% {
+        clip-path: inset(0 100% 0 100%);
+    }
+    /* STEP 1 — LEFT border: reveal from TOP → BOTTOM */
+    20% {
+        /* show only a thin vertical strip at left, top growing into bottom */
+        clip-path: inset(0 90% 60% 0);
+    }
+
+    35% {
+        /* left border fully visible (full height) */
+        clip-path: inset(0 90% 0 0);
+    }
+    /* STEP 2 — TOP border: left → right */
+    55% {
+        clip-path: inset(60% 40% 0 0);
+    }
+    /* STEP 3 — RIGHT border: reveal from BOTTOM → TOP */
+    70% {
+        /* bottom part still hidden → appearing upward */
+        clip-path: inset(0 0 60% 0);
+    }
+
+    85% {
+        /* right border fully visible (top to bottom) */
+        clip-path: inset(0 0 0 0);
+    }
+    /* STEP 4 — Whole box revealed */
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .container::before {
+        animation: none !important;
+        opacity: 1 !important;
+        clip-path: inset(0 0 0 0) !important;
+    }
+}
+
+/* Optional: if you prefer the animation only when .container has `.inView` class,
+   remove the animation properties above and use this rule instead:
+.container.inView::before {
+  animation: outlineDraw 4.6s cubic-bezier(...) 120ms forwards, outlineFade 220ms 120ms forwards;
+}
+*/
+
+
+
+/* ---------- LEFT SECTION ---------- */
+.left {
+    flex: 1;
+}
+
+
+    .title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #393430;
+}
+
+.imageWrap {
+    position: relative;
+    width: 100%;
+    height: 350px; /* You can adjust this */
+    border-radius: 0px;
+    overflow: hidden;
+}
+    .imageWrap img {
+        transition: transform 3s ease; /* very slow smooth zoom */
+        transform-origin: center;
+    }
+
+    /* Hover par thoda sa zoom */
+    .imageWrap:hover img {
+        transform: scale(1.06); /* 6% zoom — subtle & elegant */
+    }
+
+/* ---------- RIGHT SECTION ---------- */
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    padding-top: 10px;
+    
+}
+
+
+
+/* ----- OUTLINE BACKGROUND BOX ----- */
+
+
+/* subtle animation: breathe effect */
+@keyframes outlinePulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .imageWrap {
+        height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .imageWrap {
+        height: 240px;
+    }
+}

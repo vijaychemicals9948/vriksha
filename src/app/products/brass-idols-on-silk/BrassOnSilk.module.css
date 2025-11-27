@@ -1,0 +1,286 @@
+/* --- Full Screen Banner --- */
+.heroSection {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 80vh; /* set a visible height so hero animation feels right */
+}
+
+/* initial state */
+.heroImage {
+    width: 100%;
+    
+    object-fit: cover;
+    transform: scale(1.04);
+    opacity: 0;
+    transition: transform 2900ms cubic-bezier(.2,.9,.2,1), opacity 900ms cubic-bezier(.2,.9,.2,1);
+    will-change: transform, opacity;
+}
+
+/* final state on mount */
+.heroImageEnter {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* --- Content Wrapper --- */
+.pageWrap {
+    padding: 60px 40px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Graphik-Regular-Trial";
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+/* fade in wrapper (slight delay so hero leads) */
+.pageWrapEnter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Title --- */
+.title {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 32px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 560ms cubic-bezier(.2,.9,.2,1), transform 560ms cubic-bezier(.2,.9,.2,1);
+    transition-delay: 120ms;
+}
+
+.titleEnter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Products Grid --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+}
+
+/* base card state (hidden, slightly down) */
+.card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
+    will-change: opacity, transform;
+}
+
+    /* hover effect remains */
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        cursor: pointer;
+    }
+
+/* visible state (triggered via mounted) */
+/* transitionDelay for stagger provided inline from TSX */
+.cardEnter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.imgWrap {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 14px;
+}
+
+/* product image subtle zoom-in on reveal */
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
+    transition: transform 800ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* when card is entered, make image settle to normal scale */
+.cardEnter .productImg {
+    transform: scale(1);
+}
+
+.productTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Hover zoom on product images */
+.imgWrap:hover .productImg {
+    transform: scale(1.12);
+    transition: transform 600ms cubic-bezier(.2,.9,.2,1);
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .heroSection {
+        height: 70vh; /* Slightly smaller for phones */
+    }
+
+    .title {
+        font-size: 28px;
+    }
+}
+
+/* ---------------- Modal / Lightbox ---------------- */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 12, 12, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    /* fade-in */
+    opacity: 0;
+    animation: modalFadeIn 220ms ease forwards;
+}
+
+@keyframes modalFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* inner container to center and allow keyboard focus */
+.modalInner {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* content area (image + caption) */
+.modalContent {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    padding: 8px;
+    border-radius: 6px;
+    transform: scale(0.98);
+    animation: modalPopIn 260ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+
+@keyframes modalPopIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+/* the fullscreen image */
+.modalImage {
+    max-width: 100%;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* caption text */
+.modalCaption {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0.95;
+}
+
+/* close button (top-right) */
+.modalClose {
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 120ms ease, background 120ms ease;
+}
+
+    .modalClose:hover {
+        transform: scale(1.06);
+        background: rgba(0,0,0,0.75);
+    }
+
+/* nav arrows */
+.modalNav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+    .modalNav:hover {
+        background: rgba(0,0,0,0.6);
+        transform: translateY(-50%) scale(1.03);
+    }
+
+    .modalNav.prev {
+        left: calc(50% - 520px);
+    }
+    /* tuned for max-width:1100px */
+    .modalNav.next {
+        right: calc(50% - 520px);
+    }
+
+/* responsive adjustments for small screens */
+@media (max-width: 680px) {
+    .modalNav.prev {
+        left: 12px;
+    }
+
+    .modalNav.next {
+        right: 12px;
+    }
+
+    .modalClose {
+        right: 8px;
+        top: 8px;
+    }
+
+    .modalImage {
+        max-height: 70vh;
+    }
+}
+
+

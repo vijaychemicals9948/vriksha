@@ -54,3 +54,32 @@
         margin: 0;
     }
 
+
+
+/* dots container */
+.dots {
+    position: absolute;
+    bottom: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 5;
+}
+
+/* each dot */
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* active dot */
+.activeDot {
+    background: white;
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}

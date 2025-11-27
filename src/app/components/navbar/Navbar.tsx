@@ -56,7 +56,7 @@ export default function Navbar() {
             className={styles.navbar}
             style={{
                 transform: `translateY(${transform}px)`,
-                transition: `${transition}, background-color 350ms ease-in-out, box-shadow 350ms ease-in-out`,
+                transition: `${transition}, background-color 1050ms ease-in-out, box-shadow 50ms ease-in-out`,
                 backgroundColor: `rgba(255,255,255,${bgOpacity})`,
                 boxShadow: `0 2px 10px rgba(0,0,0,${0.1 * bgOpacity})`,
             }}
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {/* LEFT: Logo now here */}
                 <div className={styles.logo}>
                     <Link href="/" aria-label="Go to homepage">
-                        <Image src="/logo-white.png" alt="Vriksha Logo" width={130} height={104} priority />
+                        <Image src="/logo-black.png" alt="Vriksha Logo" width={130} height={104} priority />
                     </Link>
                 </div>
 
