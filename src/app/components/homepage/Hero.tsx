@@ -7,19 +7,27 @@ const images = [
     "/homepage/final1.png",
     "/homepage/final2.png",
     "/homepage/final4.png",
-    "/homepage/hero6.png",
 ];
 
 export default function HeroSection() {
     const [index, setIndex] = useState(0);
 
-    // Auto-slide every 4 seconds
     useEffect(() => {
-        const interval = setInterval(() => {
+        // 1) First slide changes quickly after 2 seconds
+        const firstTimeout = setTimeout(() => {
             setIndex(i => (i + 1) % images.length);
-        }, 6000);
 
-        return () => clearInterval(interval);
+            // 2) After first change, start regular 4-sec interval
+            const interval = setInterval(() => {
+                setIndex(i => (i + 1) % images.length);
+            }, 4000);
+
+            // Cleanup interval only
+            return () => clearInterval(interval);
+        }, 2000);
+
+        // Cleanup timeout when component unmounts
+        return () => clearTimeout(firstTimeout);
     }, []);
 
     return (
@@ -32,10 +40,8 @@ export default function HeroSection() {
                 />
             ))}
 
-            {/* Dark overlay */}
             <div className={styles.overlay}></div>
 
-            {/* Dots navigation */}
             <div className={styles.dots}>
                 {images.map((_, i) => (
                     <div
