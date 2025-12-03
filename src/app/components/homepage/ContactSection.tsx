@@ -86,14 +86,11 @@ export default function ContactSection() {
 
     // OPTIONAL: example inline style showing how to tweak the offsets.
     // You can remove the `style={...}` prop below or change the values (-80px, -40px) to suit.
-    const containerStyle: React.CSSProperties = {
-        // CSS variables exposed to the stylesheet:
-        // --logo-offset-x : how far from the right edge (positive values move it inward less)
-        // --logo-offset-y : how far from the bottom edge
-        // negative values pull the logo more into the viewport.
-        ["--logo-offset-x" as any]: "-80px",
-        ["--logo-offset-y" as any]: "-40px",
-    };
+    const containerStyle = {
+        ["--logo-offset-x"]: "-80px",
+        ["--logo-offset-y"]: "-40px",
+    } as React.CSSProperties;
+
 
     return (
         <section className={styles.wrapper} aria-labelledby="our-story-title">
