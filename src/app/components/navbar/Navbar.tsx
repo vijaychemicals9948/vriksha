@@ -18,49 +18,45 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            const delta = currentScrollY - lastScrollYRef.current;
+            const current = window.scrollY;
+            const delta = current - lastScrollYRef.current;
 
-            if (currentScrollY < 10) {
-                setTransform(0);
-                setTransition("transform 0s");
+            // transparent at top
+            if (current < 10) {
                 setBgOpacity(0);
-            } else if (delta > 0) {
-                setTransition("transform 0s");
-                setTransform(-NAV_HEIGHT);
-            } else if (delta < 0) {
-                setBgOpacity(1);
-                const startTransform = Math.max(-NAV_HEIGHT, -currentScrollY);
-                setTransform(startTransform);
-                setTransition("transform 0s");
-                if (rafRef.current) cancelAnimationFrame(rafRef.current);
-                rafRef.current = requestAnimationFrame(() => {
-                    setTransition("transform 0.45s cubic-bezier(.2,.9,.2,1)");
-                    setTransform(0);
-                });
+                setTransform(0);
             }
 
-            lastScrollYRef.current = currentScrollY;
+            // scrolling down → hide
+            else if (delta > 0) {
+                setTransform(-NAV_HEIGHT);
+                setBgOpacity(1);
+            }
+
+            // scrolling up → show
+            else {
+                setTransform(0);
+                setBgOpacity(1);
+            }
+
+            lastScrollYRef.current = current;
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll();
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            if (rafRef.current) cancelAnimationFrame(rafRef.current);
-        };
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
 
     return (
         <nav
             className={styles.navbar}
             style={{
                 transform: `translateY(${transform}px)`,
-                transition: `${transition}, background-color 1050ms ease-in-out, box-shadow 50ms ease-in-out`,
                 backgroundColor: `rgba(255,255,255,${bgOpacity})`,
                 boxShadow: `0 2px 10px rgba(0,0,0,${0.1 * bgOpacity})`,
             }}
         >
+
             <div className={styles.container}>
                 {/* LEFT: Logo now here */}
                 <div className={styles.logo}>

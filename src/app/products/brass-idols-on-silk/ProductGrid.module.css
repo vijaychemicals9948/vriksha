@@ -1,15 +1,17 @@
 ﻿.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 👈 Fixed 3 columns */
     gap: 24px;
-    max-width: 1100px; /* ⬅️ Thoda kam max-width */
-    margin: 0 auto; /* Center grid */
-    padding: 0 12px; /* Small side padding */
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px;
+    margin-bottom: 220px;
 }
+
 
 .card {
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 0px;
     background: #fff;
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -23,9 +25,9 @@
 
 .imgWrap {
     width: 100%;
-    height: 240px;
+    height: 352px;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0px;
     cursor: pointer; /* 👈 Added this */
 }
 
@@ -37,7 +39,7 @@
 }
 
 .imgWrap:hover .productImg {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .productTitle {
@@ -57,3 +59,5 @@
         font-size: 16px;
     }
 }
+
+

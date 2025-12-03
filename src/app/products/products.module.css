@@ -13,6 +13,9 @@
     position: relative;
     --outline-left: 350px; /* Increase left space (your requirement) */
     --outline-right: 10px; /* Keep right space small */
+
+
+
 }
 
     /* Outline box */

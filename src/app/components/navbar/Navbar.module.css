@@ -6,23 +6,23 @@
     z-index: 1000;
     padding: 0;
     margin: 0;
-    transition: background-color 300ms ease, box-shadow 300ms ease;
+    background: rgba(255, 255, 255, var(--bgOpacity, 0));
+    box-shadow: 0 2px 10px rgba(0,0,0, calc(var(--bgOpacity, 0) * 0.1));
+    /* 👇 SUPER SMOOTH TRANSITIONS */
+    transition: transform 1.45s cubic-bezier(.2,.9,.2,1), background-color 0.55s ease, box-shadow 0.35s ease;
 }
 
-/* container centers logo and keeps hamburger left */
+/* container */
 .container {
     max-width: 90%;
     margin: 0 auto;
-    height: 150px; /* Updated */
+    height: 150px;
     display: flex;
-    align-items: center; /* vertical center */
+    align-items: center;
     justify-content: space-between;
     padding: 0 20px;
 }
 
-
-/* left (hamburger) placed absolute left */
-/* logo on the left */
 .logo {
     display: flex;
     align-items: center;
@@ -31,6 +31,3 @@
     .logo img {
         display: block;
     }
-
-
-

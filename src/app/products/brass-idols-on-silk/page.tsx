@@ -4,16 +4,18 @@ import { useState } from "react";
 import HeroCover from "./HeroCover";
 import ProductGrid from "./ProductGrid";
 import ImageModal from "./ImageModal";
+import styles from "./BrassOnSilk.module.css"; // 👈 NEW
 
 const PRODUCTS = [
-    { id: 1, title: "Brass Idol 1", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 2, title: "Brass Idol 2", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 3, title: "Brass Idol 3", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 4, title: "Brass Idol 4", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 5, title: "Brass Idol 5", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 6, title: "Brass Idol 6", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 7, title: "Brass Idol 7", img: "/products/brass-on-silk/01-ganesha.jpg" },
-    { id: 8, title: "Brass Idol 8", img: "/products/brass-on-silk/01-ganesha.jpg" },
+    { id: 1, title: "Ganesha Face 16x16", img: "/products/brass-on-silk/01-ganesha.jpg" },
+    { id: 2, title: "Aandaal 10x12", img: "/products/brass-on-silk/aandaal.png" },
+    { id: 3, title: "Balaji on lotuss 10x12", img: "/products/brass-on-silk/balaji-on-lotuss.png" },
+    { id: 4, title: "Aandaal 10x12", img: "/products/brass-on-silk/aandaal.png" },
+    { id: 5, title: "Ganesha Face 16x16", img: "/products/brass-on-silk/01-ganesha.jpg" },
+    { id: 6, title: "Balaji on lotuss 10x12", img: "/products/brass-on-silk/balaji-on-lotuss.png" },
+    { id: 7, title: "Ganesha Face 16x16", img: "/products/brass-on-silk/01-ganesha.jpg" },
+    { id: 8, title: "Aandaal 10x12", img: "/products/brass-on-silk/aandaal.png" },
+    { id: 9, title: "Balaji on lotuss 10x12", img: "/products/brass-on-silk/balaji-on-lotuss.png" },
 ];
 
 export default function BrassOnSilkPage() {
@@ -37,7 +39,7 @@ export default function BrassOnSilkPage() {
     }
 
     return (
-        <>
+        <div className={styles.pageFade}>   {/* 👈 ANIMATION WRAPPER */}
             <HeroCover src="/products/brass-on-silk/brass-idols-on-silk.png" />
 
             <h1 style={{ textAlign: "center", margin: "40px 0" }}>
@@ -53,6 +55,6 @@ export default function BrassOnSilkPage() {
                 onClose={closeModal}
                 onMove={move}
             />
-        </>
+        </div>
     );
 }

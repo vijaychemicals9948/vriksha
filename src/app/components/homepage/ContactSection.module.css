@@ -9,12 +9,15 @@
     padding: 110px 20px;
     box-sizing: border-box;
     margin-top: 200px;
+    overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden; /* 👈 just add this */
 }
 .bgLogo {
     position: absolute;
     z-index: -2; /* behind .container (which has z-index:2) */
-    bottom: calc(var(--logo-offset-y, 0px)); /* default 0, override via CSS variable */
-    right: calc(var(--logo-offset-x, 0px)); /* default 0, override via CSS variable */
+    bottom: calc(var(--logo-offset-y, 250px)); /* default 0, override via CSS variable */
+    right: calc(var(--logo-offset-x, 250px)); /* default 0, override via CSS variable */
     transform: translate(50%, 50%);
     width: 720px; /* pick a sensible default size */
     max-width: 40vw; /* responsive cap */
@@ -38,6 +41,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    overflow: visible;
 }
 
 /* LEFT SECTION */
