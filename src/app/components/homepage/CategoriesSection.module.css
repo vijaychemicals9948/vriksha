@@ -1,0 +1,91 @@
+﻿/* GRID */
+.gridWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+
+}
+
+/* square ratio */
+.cardRatio {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+}
+
+    .cardRatio > * {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .cardRatio img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+/* last row full width */
+.gridItemFull {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: block;
+}
+
+.centerPair {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+}
+
+/* pair items = same size as 1 grid column */
+.pairItem {
+    flex: 0 0 calc((100% - 40px) / 3); /* 2 gaps → 20px * 2 = 40px */
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .gridWrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gridItemFull {
+        grid-column: 1 / -1;
+    }
+
+    .centerPair {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* 2-column mode → (container - 1 gap)/2 */
+    .pairItem {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .header h2 {
+        font-size: 28px;
+    }
+
+    .centerPair {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .pairItem {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+}

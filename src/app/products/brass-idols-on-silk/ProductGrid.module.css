@@ -1,0 +1,59 @@
+﻿.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1100px; /* ⬅️ Thoda kam max-width */
+    margin: 0 auto; /* Center grid */
+    padding: 0 12px; /* Small side padding */
+}
+
+.card {
+    padding: 16px;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+.imgWrap {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer; /* 👈 Added this */
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.imgWrap:hover .productImg {
+    transform: scale(1.1);
+}
+
+.productTitle {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* --- Mobile improvements --- */
+@media (max-width: 480px) {
+    .imgWrap {
+        height: 200px;
+    }
+
+    .productTitle {
+        font-size: 16px;
+    }
+}

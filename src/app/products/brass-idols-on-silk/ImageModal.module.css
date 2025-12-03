@@ -1,0 +1,140 @@
+/* ImageModal.module.css (extended) */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+.imageViewport {
+    width: min(1200px, 96vw); /* increased max width for larger image */
+    height: min(900px, 88vh); /* increased height */
+    
+    border-radius: 6px;
+    box-shadow: 0 14px 48px rgba(0,0,0,0.6);
+    touch-action: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10,10,10,0.1);
+}
+
+
+.zoomWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+}
+
+.zoomImg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    will-change: transform;
+    transition: transform 220ms cubic-bezier(.2,.9,.2,1);
+    pointer-events: none;
+    display: block;
+}
+
+.zoomArea {
+    width: min(1200px, 95vw);
+    height: min(800px, 85vh);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    cursor: zoom-in;
+    user-select: none;
+    touch-action: none; /* allows pointer events for pan */
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Replace your existing .closeBtn with this */
+.closeBtn {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    font-size: 32px;
+    border: none;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 140ms ease, box-shadow 160ms ease;
+    z-index: 10001; /* ensure it's above the image */
+}
+
+    /* Hover (mouse) */
+    .closeBtn:hover {
+        background: rgba(255,255,255,0.08); /* slightly lighter */
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+
+    /* Active (mouse down) */
+    .closeBtn:active {
+        transform: translateY(0) scale(0.99);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    /* Keyboard focus (accessibility) */
+    .closeBtn:focus-visible {
+        outline: 3px solid rgba(255,255,255,0.16);
+        outline-offset: 3px;
+        background: rgba(255,255,255,0.06);
+        transform: translateY(-1px) scale(1.02);
+    }
+
+
+.navLeft, .navRight {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.navLeft {
+    left: 20px;
+}
+
+.navRight {
+    right: 20px;
+}
+
+    .navLeft:disabled, .navRight:disabled {
+        opacity: 0.35;
+        pointer-events: none;
+    }
+
+.caption {
+    color: white;
+    font-size: 16px;
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.hint {
+    font-size: 12px;
+    color: #ddd;
+}

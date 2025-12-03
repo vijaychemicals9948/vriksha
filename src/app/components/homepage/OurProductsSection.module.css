@@ -1,0 +1,246 @@
+﻿/* OurProductsSection.module.css */
+
+/* Section wrapper now has the texture background */
+.wrapper {
+    position: relative; /* <-- IMPORTANT: so absolute children position relative to this section */
+    padding-top: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-image: url("/homepage/texture.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* dim the background slightly if you want (optional)
+.wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.02);
+    pointer-events: none;
+} */
+
+.container {
+
+    width: 100%;
+    padding: 30px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    max-width: 1000px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    align-items : flex-end;
+    /* ensure container background remains transparent so texture shows */
+}
+
+/* LEFT SECTION */
+.left {
+    margin-top: 120px;
+    flex: 1;
+    margin-left: -170px; /* keep the left shift if you want */
+}
+
+
+
+.title {
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    
+    color: #393430;
+    font-family: Poppins, sans-serif;
+}
+
+/* The outer element that receives transforms (moves with global mouse) */
+.imageOuter {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: visible; /* allow movement beyond bounds so image won't be clipped */
+    will-change: transform;
+    transition: transform 120ms linear; /* subtle crispness if JS stops */
+}
+
+/* Visual image box containing next/image */
+.imageBox {
+    position: relative;
+    width: 94%;
+    height: 460px;
+    border-radius: 0px;
+    overflow: visible; /* allow image to be visible beyond box if needed */
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    transform-origin: center;
+}
+
+    /* target the generated img inside next/image - Next adds an img inside a wrapper */
+    .imageBox :global(img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 3s ease;
+        transform-origin: center;
+    }
+
+    /* optional: gentle scale on hover of the image box (kept, but harmless) */
+    .imageBox:hover :global(img) {
+        transform: scale(1.06);
+    }
+
+/* RIGHT SECTION */
+.right {
+    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 18px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #222;
+    padding-top: 10px;
+    padding-left: 50px;
+    z-index: 10; /* higher than moving image / outline */
+
+}
+
+/* category list styling */
+.catList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+    .catList > li {
+        margin-bottom: 10px;
+        padding-left: 6px;
+        position: relative;
+        font-weight: 400;
+        color: #393430;
+    }
+
+        /* simple bullet before each top-level item */
+        .catList > li::before {
+            content: "•";
+            position: absolute;
+            left: -12px;
+            top: 2px;
+            color: #393430; /* subtle gold-ish dot */
+            font-size: 18px;
+        }
+
+    /* nested list (subcategories) */
+    .catList li ul {
+        list-style: disc;
+        margin: 8px 0 0 18px;
+        padding-left: 10px;
+        font-weight: 400;
+        color: #393430;
+    }
+
+        .catList li ul li {
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .imageBox {
+        height: 280px;
+    }
+
+        /* disable the hover scale and pointer-driven transform on small screens */
+        .imageBox:hover :global(img) {
+            transform: scale(1);
+        }
+
+    .imageOuter {
+        transform: none !important;
+    }
+
+    .left {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 26px;
+    }
+
+    .imageBox {
+        height: 240px;
+    }
+
+    .catList > li::before {
+        left: -10px;
+    }
+}
+
+/* keep link appearance consistent with list text */
+.productLink {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+    cursor: pointer;
+}
+
+    /* underline base (hidden) */
+    .productLink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px; /* adjust if needed */
+        width: 100%;
+        height: 2px;
+        background-color: currentColor; /* same color as text */
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease-out;
+    }
+
+    /* hover me underline left → right */
+    .productLink:hover::after,
+    .productLink:focus::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    /* mouse hatate hi reverse animation right → left */
+    .productLink:not(:hover)::after {
+        transform-origin: right;
+    }
+
+
+
+
+.verticalBoxProduct {
+    position: absolute;
+    right: -150px;
+    bottom: -480px;
+    width: var(--outline-vertical-width, 190px); /* optional - keeps width in sync */
+    /* set variables for the component */
+    --outline-vertical-height: 520px;
+    --outline-vertical-width: 190px;
+    --outline-vertical-color: black;
+    box-sizing: border-box;
+    background: transparent;
+    pointer-events: none;
+    z-index: 1;
+}

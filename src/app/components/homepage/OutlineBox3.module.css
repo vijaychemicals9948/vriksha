@@ -1,0 +1,59 @@
+.outlineWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    
+}
+
+.outlineBox {
+    position: relative;
+    width: calc(100% - 60px);
+    max-width: 1000px;
+    padding: 120px 130px;
+    box-sizing: border-box;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.outlineSvg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.outlinePath {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    margin-top: -150px;
+    margin-bottom: -150px;
+    
+}
+
+@media (max-width: 900px) {
+    .outlineBox {
+        padding: 40px 20px;
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    .outlineBox {
+        padding: 28px 16px;
+    }
+}

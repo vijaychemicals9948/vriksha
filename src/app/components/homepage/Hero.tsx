@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import styles from "./HeroSection.module.css";
 
 const images = [
-    "/homepage/hero1.png",
-    "/homepage/hero2.png",
-    "/homepage/hero3.png",
+    "/homepage/final1.png",
+    "/homepage/final2.png",
+    "/homepage/final4.png",
     "/homepage/hero6.png",
 ];
 
@@ -17,7 +17,7 @@ export default function HeroSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex(i => (i + 1) % images.length);
-        }, 4000);
+        }, 6000);
 
         return () => clearInterval(interval);
     }, []);

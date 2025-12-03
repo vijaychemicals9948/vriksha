@@ -1,0 +1,24 @@
+/* components/OutlineBoxVertical.module.css */
+.wrapper {
+    width: var(--outline-vertical-width, 170px);
+    height: var(--outline-vertical-height, 320px);
+    box-sizing: border-box;
+    outline: 2px solid var(--outline-vertical-color, #000);
+    background: transparent;
+    display: block;
+    pointer-events: none;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        display: none;
+    }
+}

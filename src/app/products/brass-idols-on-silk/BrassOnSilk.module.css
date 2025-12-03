@@ -1,29 +1,29 @@
-/* --- Full Screen Banner --- */
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 .heroSection {
     width: 100%;
     position: relative;
     overflow: hidden;
-    height: 80vh; /* set a visible height so hero animation feels right */
+    height: 80vh;
 }
 
-/* initial state */
 .heroImage {
     width: 100%;
-    
     object-fit: cover;
     transform: scale(1.04);
     opacity: 0;
-    transition: transform 2900ms cubic-bezier(.2,.9,.2,1), opacity 900ms cubic-bezier(.2,.9,.2,1);
-    will-change: transform, opacity;
+    transition: transform 2900ms cubic-bezier(.2,.9,.2,1),
+                opacity 900ms cubic-bezier(.2,.9,.2,1);
 }
-
-/* final state on mount */
 .heroImageEnter {
     transform: scale(1);
     opacity: 1;
 }
 
-/* --- Content Wrapper --- */
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
 .pageWrap {
     padding: 60px 40px 100px;
     max-width: 1200px;
@@ -33,14 +33,11 @@
     transform: translateY(8px);
     transition: opacity 500ms ease, transform 500ms ease;
 }
-
-/* fade in wrapper (slight delay so hero leads) */
 .pageWrapEnter {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- Title --- */
 .title {
     font-size: 42px;
     font-weight: 700;
@@ -48,23 +45,24 @@
     text-align: center;
     opacity: 0;
     transform: translateY(8px);
-    transition: opacity 560ms cubic-bezier(.2,.9,.2,1), transform 560ms cubic-bezier(.2,.9,.2,1);
+    transition: opacity 560ms cubic-bezier(.2,.9,.2,1),
+                transform 560ms cubic-bezier(.2,.9,.2,1);
     transition-delay: 120ms;
 }
-
 .titleEnter {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* --- Products Grid --- */
+/* =========================================================
+   GRID
+   ========================================================= */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 28px;
 }
 
-/* base card state (hidden, slightly down) */
 .card {
     background: #fff;
     padding: 16px;
@@ -73,19 +71,9 @@
     border: 1px solid rgba(0,0,0,0.1);
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
-    will-change: opacity, transform;
+    transition: opacity 420ms cubic-bezier(.2,.9,.2,1),
+                transform 420ms cubic-bezier(.2,.9,.2,1);
 }
-
-    /* hover effect remains */
-    .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-        cursor: pointer;
-    }
-
-/* visible state (triggered via mounted) */
-/* transitionDelay for stagger provided inline from TSX */
 .cardEnter {
     opacity: 1;
     transform: translateY(0);
@@ -98,8 +86,6 @@
     border-radius: 6px;
     margin-bottom: 14px;
 }
-
-/* product image subtle zoom-in on reveal */
 .productImg {
     width: 100%;
     height: 100%;
@@ -107,180 +93,167 @@
     transform: scale(1.06);
     transition: transform 800ms cubic-bezier(.2,.9,.2,1);
 }
-
-/* when card is entered, make image settle to normal scale */
 .cardEnter .productImg {
     transform: scale(1);
+}
+.imgWrap:hover .productImg {
+    transform: scale(1.12);
 }
 
 .productTitle {
     font-size: 18px;
     font-weight: 600;
-    margin: 0;
 }
 
-/* Hover zoom on product images */
-.imgWrap:hover .productImg {
-    transform: scale(1.12);
-    transition: transform 600ms cubic-bezier(.2,.9,.2,1);
-}
-
-
-/* --- Responsive --- */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 600px) {
     .heroSection {
-        height: 70vh; /* Slightly smaller for phones */
+        height: 70vh;
     }
-
     .title {
         font-size: 28px;
     }
 }
 
-/* ---------------- Modal / Lightbox ---------------- */
+/* =========================================================
+   FULLSCREEN MODAL + ZOOM SYSTEM
+   ========================================================= */
 .modalOverlay {
     position: fixed;
     inset: 0;
-    background: rgba(12, 12, 12, 0.75);
+    background: rgba(12,12,12,0.95);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1200;
-    /* fade-in */
-    opacity: 0;
-    animation: modalFadeIn 220ms ease forwards;
+    z-index: 9999;
 }
 
-@keyframes modalFadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-/* inner container to center and allow keyboard focus */
 .modalInner {
-    position: relative;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 20px;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.modalContent {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* content area (image + caption) */
-.modalContent {
-    max-height: 85vh;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 12px;
-    background: transparent;
-    padding: 8px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* ===== ZOOM AREA ===== */
+.zoomWrap {
+    width: min(1200px, 96vw);
+    height: min(800px, 86vh);
     border-radius: 6px;
-    transform: scale(0.98);
-    animation: modalPopIn 260ms cubic-bezier(.2,.9,.2,1) forwards;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    display: block;
+    cursor: zoom-in;
+    transition: background-size 180ms ease;
+    position: relative;
 }
 
-@keyframes modalPopIn {
-    to {
-        transform: scale(1);
-    }
-}
-
-/* the fullscreen image */
-.modalImage {
-    max-width: 100%;
-    max-height: 78vh;
+.zoomFallbackImg {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    user-select: none;
+    pointer-events: none;
 }
 
-/* caption text */
+/* When zooming (background-size > 100%) fallback img naturally hides behind background */
+.zoomWrap:active {
+    cursor: grabbing;
+}
+
+/* Caption */
 .modalCaption {
     color: #fff;
     font-size: 16px;
+    margin-top: 8px;
     text-align: center;
-    opacity: 0.95;
+}
+.hint {
+    font-size: 12px;
+    opacity: 0.75;
+    margin-top: 4px;
 }
 
-/* close button (top-right) */
+/* Close button */
 .modalClose {
-    position: absolute;
-    right: -6px;
-    top: -6px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: none;
     background: rgba(0,0,0,0.6);
     color: #fff;
-    border: none;
     font-size: 28px;
-    line-height: 1;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
     cursor: pointer;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 120ms ease, background 120ms ease;
+    z-index: 11000;
 }
 
-    .modalClose:hover {
-        transform: scale(1.06);
-        background: rgba(0,0,0,0.75);
-    }
-
-/* nav arrows */
+/* Navigation */
 .modalNav {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.45);
-    color: #fff;
-    border: none;
-    width: 56px;
-    height: 56px;
+    width: 54px;
+    height: 54px;
     border-radius: 999px;
-    font-size: 28px;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    color: #fff;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    font-size: 30px;
+    z-index: 11000;
+}
+.prev { left: 12px; }
+.next { right: 12px; }
+
+/* =========================================================
+   RESPONSIVE ZOOM AREA
+   ========================================================= */
+@media (max-width: 880px) {
+    .zoomWrap {
+        width: 96vw;
+        height: 68vh;
+    }
 }
 
-    .modalNav:hover {
-        background: rgba(0,0,0,0.6);
-        transform: translateY(-50%) scale(1.03);
+@media (max-width: 480px) {
+    .zoomWrap {
+        width: 96vw;
+        height: 56vh;
     }
-
-    .modalNav.prev {
-        left: calc(50% - 520px);
-    }
-    /* tuned for max-width:1100px */
-    .modalNav.next {
-        right: calc(50% - 520px);
-    }
-
-/* responsive adjustments for small screens */
-@media (max-width: 680px) {
-    .modalNav.prev {
-        left: 12px;
-    }
-
-    .modalNav.next {
-        right: 12px;
-    }
-
     .modalClose {
-        right: 8px;
-        top: 8px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
     }
-
-    .modalImage {
-        max-height: 70vh;
+    .modalNav {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+    .prev { left: 8px; }
+    .next { right: 8px; }
+    .modalCaption {
+        font-size: 14px;
     }
 }
-
-

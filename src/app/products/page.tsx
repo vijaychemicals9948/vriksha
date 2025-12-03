@@ -1,4 +1,6 @@
-﻿"use client";
+﻿//products/page.tsx
+
+"use client";
 
 import Image from "next/image";
 import styles from "./products.module.css";
