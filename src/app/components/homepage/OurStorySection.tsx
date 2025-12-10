@@ -150,8 +150,9 @@ export default function OurStorySection() {
                     </div>
                 </div>
             </OutlineBox>
-            <OutlineBoxVertical className={styles.verticalBox} />
+            
         </section>
         
     );
 }
+/*<OutlineBoxVertical className={styles.verticalBox} /> */

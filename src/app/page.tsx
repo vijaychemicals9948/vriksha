@@ -11,7 +11,7 @@ export default function HomePage() {
         <>
             <HeroSection />
             <OurStorySection />
-            <OurProductsSection />
+            
             <CategoriesSection />
             <ContactSection />
 
@@ -20,3 +20,4 @@ export default function HomePage() {
     );
 }
 /* <AboutSection /> */
+/*<OurProductsSection />*/

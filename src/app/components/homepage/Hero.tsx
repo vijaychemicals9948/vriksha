@@ -7,6 +7,8 @@ const images = [
     "/homepage/final1.png",
     "/homepage/final2.png",
     "/homepage/final4.png",
+    "/homepage/hero7.webp",
+    "/homepage/hero8.webp",
 ];
 
 export default function HeroSection() {

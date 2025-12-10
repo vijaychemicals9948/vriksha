@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./OurProductsSection.module.css";
 import OutlineBox from "./OutlineBox2";
-import { productsData } from "@/data/productsData"; // <- added import
+import { productsData } from "@/data/productsData"; // <- kept
 import OutlineBoxVertical from "./OutlineBoxVertical";
 
 // re-use a simple ProductItem type for TS clarity
@@ -23,93 +23,12 @@ const slugify = (s: string) =>
         .replace(/\s+/g, "-"); // spaces -> hyphens
 
 export default function OurProductsSection() {
-    const wrapperRef = useRef<HTMLDivElement | null>(null); // element we will transform
-    const rafRef = useRef<number | null>(null);
-    const changeTimerRef = useRef<number | null>(null);
-
-    const target = useRef({ x: 0, y: 0 });
-    const current = useRef({ x: 0, y: 0 });
-
-    const [enabled, setEnabled] = useState<boolean>(true);
-
-    // subtle maximum translation in px
-    const MAX_TRANSLATE = 10; // kept small for a very light feel
-
-    // Enable animation only on larger viewports (you already used 900px)
-    useEffect(() => {
-        const updateEnabled = () => setEnabled(window.innerWidth > 900);
-        updateEnabled();
-        window.addEventListener("resize", updateEnabled);
-        return () => window.removeEventListener("resize", updateEnabled);
-    }, []);
-
-    // Pick a new random target (within -1..1 normalized range) and schedule next pick
-    const pickNewTarget = () => {
-        const nx = (Math.random() * 2 - 1) * 0.6;
-        const ny = (Math.random() * 2 - 1) * 0.45;
-        target.current.x = nx * MAX_TRANSLATE;
-        target.current.y = ny * MAX_TRANSLATE;
-
-        const next = 500 + Math.random() * 1500;
-        changeTimerRef.current = window.setTimeout(pickNewTarget, next) as unknown as number;
-    };
-
-    // RAF smoothing animation with tiny sine wobble
-    useEffect(() => {
-        let t = 0;
-        const animate = () => {
-            const ease = 0.08;
-            current.current.x += (target.current.x - current.current.x) * ease;
-            current.current.y += (target.current.y - current.current.y) * ease;
-
-            t += 0.016;
-            const wobbleX = Math.sin(t * 0.9) * 0.6;
-            const wobbleY = Math.sin(t * 1.3) * 0.4;
-
-            if (wrapperRef.current && enabled) {
-                wrapperRef.current.style.transform = `translate3d(${(current.current.x + wobbleX).toFixed(3)}px, ${(current.current.y + wobbleY).toFixed(3)}px, 0)`;
-            } else if (wrapperRef.current) {
-                wrapperRef.current.style.transform = `none`;
-            }
-
-            rafRef.current = requestAnimationFrame(animate);
-        };
-
-        rafRef.current = requestAnimationFrame(animate);
-        if (enabled) {
-            pickNewTarget();
-        } else {
-            target.current.x = 0;
-            target.current.y = 0;
-        }
-
-        return () => {
-            if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-            if (changeTimerRef.current !== null) clearTimeout(changeTimerRef.current);
-            rafRef.current = null;
-            changeTimerRef.current = null;
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [enabled]);
-
-    // Ensure if animation disabled we reset positions
-    useEffect(() => {
-        if (!enabled) {
-            target.current.x = 0;
-            target.current.y = 0;
-            current.current.x = 0;
-            current.current.y = 0;
-            if (wrapperRef.current) wrapperRef.current.style.transform = "none";
-        }
-    }, [enabled]);
-
     // Recursive renderer to output the same structure (top-level li and nested ul for children)
     const renderItems = (items: ProductItem[]) => {
         return items.map((it, idx) => {
             const slug = slugify(it.title);
             return (
                 <li key={idx}>
-                    {/* NO <a> inside Link (new Next.js) */}
                     <Link href={`/products/${slug}`} className={styles.productLink}>
                         {it.title}
                     </Link>
@@ -160,7 +79,8 @@ export default function OurProductsSection() {
                             Our products
                         </h2>
 
-                        <div className={styles.imageOuter} ref={wrapperRef}>
+                        {/* Static image wrapper (no animation) */}
+                        <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
                                     src="/homepage/our-products.jpg"
@@ -179,10 +99,10 @@ export default function OurProductsSection() {
                             {renderItems(productsData as ProductItem[])}
                         </ul>
                     </div>
+
                     <OutlineBoxVertical className={styles.verticalBoxProduct} />
                 </div>
             </OutlineBox>
-          
         </section>
     );
 }

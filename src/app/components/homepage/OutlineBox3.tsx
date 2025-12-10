@@ -2,27 +2,41 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./OutlineBox3.module.css";
 
-type Props = { children: React.ReactNode };
+type Props = {
+    children: React.ReactNode;
+    topGap?: number; // kept for backward compat if you ever want it (not used when top is continuous)
+    bottomGap?: number;
+    bottomGapRatio?: number;
+    leftTopLength?: number;
+    leftBottomLength?: number;
+};
 
-export default function OutlineBox3({ children }: Props) {
+export default function OutlineBox3({
+    children,
+    topGap = 0,
+    bottomGap,
+    bottomGapRatio = 0.65,
+    leftTopLength = 60,
+    leftBottomLength = 1550,
+}: Props) {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);
 
     // SVG path refs
-    const topLeftRef = useRef<SVGPathElement | null>(null);
-    const topRightRef = useRef<SVGPathElement | null>(null);
+    const topRef = useRef<SVGPathElement | null>(null);           // single continuous top
     const rightRef = useRef<SVGPathElement | null>(null);
     const bottomLeftRef = useRef<SVGPathElement | null>(null);
     const bottomRightRef = useRef<SVGPathElement | null>(null);
-    const leftRef = useRef<SVGPathElement | null>(null); // single continuous left path
+    const leftTopRef = useRef<SVGPathElement | null>(null);
+    const leftBottomRef = useRef<SVGPathElement | null>(null);
 
     const lengthsRef = useRef({
-        topLeft: 0,
-        topRight: 0,
+        top: 0,
         right: 0,
         bottomLeft: 0,
         bottomRight: 0,
-        left: 0,
+        leftTop: 0,
+        leftBottom: 0,
     });
 
     const progressRef = useRef(0);
@@ -46,11 +60,7 @@ export default function OutlineBox3({ children }: Props) {
         let progress = (enterStart - rect.top) / (enterStart - enterEnd);
         progress = Math.max(0, Math.min(1, progress));
 
-        if (completedRef.current) {
-            targetProgressRef.current = 1;
-        } else {
-            targetProgressRef.current = progress;
-        }
+        targetProgressRef.current = completedRef.current ? 1 : progress;
 
         if (rafRef.current === null) {
             rafRef.current = requestAnimationFrame(animate);
@@ -68,74 +78,61 @@ export default function OutlineBox3({ children }: Props) {
         setSvgSize({ w, h });
 
         requestAnimationFrame(() => {
-            const topLeft = topLeftRef.current;
-            const topRight = topRightRef.current;
+            const top = topRef.current;
             const right = rightRef.current;
             const bottomLeft = bottomLeftRef.current;
             const bottomRight = bottomRightRef.current;
-            const left = leftRef.current;
+            const leftTop = leftTopRef.current;
+            const leftBottom = leftBottomRef.current;
 
-            const newTopLeft = topLeft ? topLeft.getTotalLength() : 0;
-            const newTopRight = topRight ? topRight.getTotalLength() : 0;
+            const newTop = top ? top.getTotalLength() : 0;
             const newRight = right ? right.getTotalLength() : 0;
             const newBottomLeft = bottomLeft ? bottomLeft.getTotalLength() : 0;
             const newBottomRight = bottomRight ? bottomRight.getTotalLength() : 0;
-            const newLeft = left ? left.getTotalLength() : 0;
+            const newLeftTop = leftTop ? leftTop.getTotalLength() : 0;
+            const newLeftBottom = leftBottom ? leftBottom.getTotalLength() : 0;
 
             const prev = lengthsRef.current;
             const changed =
-                newTopLeft !== prev.topLeft ||
-                newTopRight !== prev.topRight ||
+                newTop !== prev.top ||
                 newRight !== prev.right ||
                 newBottomLeft !== prev.bottomLeft ||
                 newBottomRight !== prev.bottomRight ||
-                newLeft !== prev.left ||
+                newLeftTop !== prev.leftTop ||
+                newLeftBottom !== prev.leftBottom ||
                 sizeChanged;
 
-            lengthsRef.current.topLeft = newTopLeft;
-            lengthsRef.current.topRight = newTopRight;
+            lengthsRef.current.top = newTop;
             lengthsRef.current.right = newRight;
             lengthsRef.current.bottomLeft = newBottomLeft;
             lengthsRef.current.bottomRight = newBottomRight;
-            lengthsRef.current.left = newLeft;
+            lengthsRef.current.leftTop = newLeftTop;
+            lengthsRef.current.leftBottom = newLeftBottom;
 
             const currProgress = progressRef.current ?? 0;
 
-            if (topLeft) {
-                topLeft.style.strokeDasharray = `${lengthsRef.current.topLeft}`;
-                topLeft.style.strokeDashoffset = `${Math.round(lengthsRef.current.topLeft * (1 - currProgress))}`;
-            }
-            if (topRight) {
-                topRight.style.strokeDasharray = `${lengthsRef.current.topRight}`;
-                topRight.style.strokeDashoffset = `${Math.round(lengthsRef.current.topRight * (1 - currProgress))}`;
-            }
-            if (right) {
-                // ensure right has dasharray too and same offset pattern
-                right.style.strokeDasharray = `${lengthsRef.current.right}`;
-                right.style.strokeDashoffset = `${Math.round(lengthsRef.current.right * (1 - currProgress))}`;
-            }
-            if (bottomLeft) {
-                bottomLeft.style.strokeDasharray = `${lengthsRef.current.bottomLeft}`;
-                bottomLeft.style.strokeDashoffset = `${Math.round(lengthsRef.current.bottomLeft * (1 - currProgress))}`;
-            }
-            if (bottomRight) {
-                bottomRight.style.strokeDasharray = `${lengthsRef.current.bottomRight}`;
-                bottomRight.style.strokeDashoffset = `${Math.round(lengthsRef.current.bottomRight * (1 - currProgress))}`;
-            }
-            if (left) {
-                left.style.strokeDasharray = `${lengthsRef.current.left}`;
-                left.style.strokeDashoffset = `${Math.round(lengthsRef.current.left * (1 - currProgress))}`;
-            }
+            const setDash = (el: SVGPathElement | null, len: number) => {
+                if (!el) return;
+                el.style.strokeDasharray = `${len}`;
+                el.style.strokeDashoffset = `${Math.round(len * (1 - currProgress))}`;
+            };
+
+            setDash(top, lengthsRef.current.top);
+            setDash(right, lengthsRef.current.right);
+            setDash(bottomLeft, lengthsRef.current.bottomLeft);
+            setDash(bottomRight, lengthsRef.current.bottomRight);
+            setDash(leftTop, lengthsRef.current.leftTop);
+            setDash(leftBottom, lengthsRef.current.leftBottom);
         });
     };
 
     const animate = () => {
-        const topLeft = topLeftRef.current;
-        const topRight = topRightRef.current;
+        const top = topRef.current;
         const right = rightRef.current;
         const bottomLeft = bottomLeftRef.current;
         const bottomRight = bottomRightRef.current;
-        const left = leftRef.current;
+        const leftTop = leftTopRef.current;
+        const leftBottom = leftBottomRef.current;
 
         const current = progressRef.current;
         const target = targetProgressRef.current;
@@ -146,27 +143,24 @@ export default function OutlineBox3({ children }: Props) {
 
         const p = next;
 
-        if (topLeft && lengthsRef.current.topLeft)
-            topLeft.style.strokeDashoffset = String(lengthsRef.current.topLeft * (1 - p));
-        if (topRight && lengthsRef.current.topRight)
-            topRight.style.strokeDashoffset = String(lengthsRef.current.topRight * (1 - p));
-        if (right && lengthsRef.current.right)
-            right.style.strokeDashoffset = String(lengthsRef.current.right * (1 - p));
-        if (bottomLeft && lengthsRef.current.bottomLeft)
-            bottomLeft.style.strokeDashoffset = String(lengthsRef.current.bottomLeft * (1 - p));
-        if (bottomRight && lengthsRef.current.bottomRight)
-            bottomRight.style.strokeDashoffset = String(lengthsRef.current.bottomRight * (1 - p));
-        if (left && lengthsRef.current.left)
-            left.style.strokeDashoffset = String(lengthsRef.current.left * (1 - p));
+        const setOffset = (el: SVGPathElement | null, len: number) => {
+            if (!el || !len) return;
+            el.style.strokeDashoffset = String(len * (1 - p));
+        };
+
+        setOffset(top, lengthsRef.current.top);
+        setOffset(right, lengthsRef.current.right);
+        setOffset(bottomLeft, lengthsRef.current.bottomLeft);
+        setOffset(bottomRight, lengthsRef.current.bottomRight);
+        setOffset(leftTop, lengthsRef.current.leftTop);
+        setOffset(leftBottom, lengthsRef.current.leftBottom);
 
         if (p >= 0.999) {
             progressRef.current = 1;
-            if (topLeft && lengthsRef.current.topLeft) topLeft.style.strokeDashoffset = "0";
-            if (topRight && lengthsRef.current.topRight) topRight.style.strokeDashoffset = "0";
-            if (right && lengthsRef.current.right) right.style.strokeDashoffset = "0";
-            if (bottomLeft && lengthsRef.current.bottomLeft) bottomLeft.style.strokeDashoffset = "0";
-            if (bottomRight && lengthsRef.current.bottomRight) bottomRight.style.strokeDashoffset = "0";
-            if (left && lengthsRef.current.left) left.style.strokeDashoffset = "0";
+            [top, right, bottomLeft, bottomRight, leftTop, leftBottom].forEach((el) => {
+                if (!el) return;
+                el.style.strokeDashoffset = "0";
+            });
 
             completedRef.current = true;
             if (rafRef.current !== null) {
@@ -181,12 +175,16 @@ export default function OutlineBox3({ children }: Props) {
         } else {
             progressRef.current = target;
             const final = target;
-            if (topLeft && lengthsRef.current.topLeft) topLeft.style.strokeDashoffset = String(lengthsRef.current.topLeft * (1 - final));
-            if (topRight && lengthsRef.current.topRight) topRight.style.strokeDashoffset = String(lengthsRef.current.topRight * (1 - final));
-            if (right && lengthsRef.current.right) right.style.strokeDashoffset = String(lengthsRef.current.right * (1 - final));
-            if (bottomLeft && lengthsRef.current.bottomLeft) bottomLeft.style.strokeDashoffset = String(lengthsRef.current.bottomLeft * (1 - final));
-            if (bottomRight && lengthsRef.current.bottomRight) bottomRight.style.strokeDashoffset = String(lengthsRef.current.bottomRight * (1 - final));
-            if (left && lengthsRef.current.left) left.style.strokeDashoffset = String(lengthsRef.current.left * (1 - final));
+            const setFinal = (el: SVGPathElement | null, len: number) => {
+                if (!el || !len) return;
+                el.style.strokeDashoffset = String(len * (1 - final));
+            };
+            setFinal(top, lengthsRef.current.top);
+            setFinal(right, lengthsRef.current.right);
+            setFinal(bottomLeft, lengthsRef.current.bottomLeft);
+            setFinal(bottomRight, lengthsRef.current.bottomRight);
+            setFinal(leftTop, lengthsRef.current.leftTop);
+            setFinal(leftBottom, lengthsRef.current.leftBottom);
 
             rafRef.current = null;
         }
@@ -213,40 +211,50 @@ export default function OutlineBox3({ children }: Props) {
             if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [topGap, bottomGap, bottomGapRatio, leftTopLength, leftBottomLength]);
 
     const { w, h } = svgSize;
 
     const padX = 30;
-    const padY = 70;
+    let padY = 70;
 
-    // top gap configuration (adjust this to make center cut wider/narrower)
-    const topGap = 790; // in px — change as needed
+    if (h > 0) padY = Math.min(padY, Math.floor(h / 3));
 
-    // bottom gap: make it smaller than top gap (you can tweak this)
-    const bottomGap = Math.round(topGap * 0.65); // e.g. 60% of top gap
+    const resolvedBottomGap = typeof bottomGap === "number" ? bottomGap : Math.round(topGap * bottomGapRatio);
 
-    // compute top segments so that there's a centered gap of width `topGap`
+    // top is single continuous line now
+    const topPath = w ? `M ${padX} ${padY} H ${w - padX}` : "";
+
+    // bottom segments (still split into two)
     const half = w ? Math.round(w / 2) : 0;
-    const gapHalfTop = Math.round(topGap / 2);
-    const leftEndX = Math.max(padX, half - gapHalfTop);
-    const rightStartX = Math.min(w - padX, half + gapHalfTop);
-
-    const topLeftPath = w ? `M ${padX} ${padY} H ${leftEndX}` : "";
-    const topRightPath = w ? `M ${rightStartX} ${padY} H ${w - padX}` : "";
-
-    // bottom segments (split into two with a smaller centered gap)
-    const gapHalfBottom = Math.round(bottomGap / 2);
+    const gapHalfBottom = Math.round(resolvedBottomGap / 2);
     const bottomLeftEndX = Math.max(padX, half - gapHalfBottom);
     const bottomRightStartX = Math.min(w - padX, half + gapHalfBottom);
-
-    // bottom paths are at y = h - padY, left->right for bottomLeft and bottomRight
     const bottomLeftPath = w ? `M ${padX} ${h - padY} H ${bottomLeftEndX}` : "";
     const bottomRightPath = w ? `M ${bottomRightStartX} ${h - padY} H ${w - padX}` : "";
 
-    // other sides (right and continuous left)
+    // right side - continuous vertical line
     const rightPath = w ? `M ${w - padX} ${padY} V ${h - padY}` : "";
-    const leftPath = w ? `M ${padX} ${h - padY} V ${padY}` : ""; // up to top padY — continuous left
+
+    // left (top/bottom split behavior preserved)
+    let leftTopPath = "";
+    let leftBottomPath = "";
+    let leftContinuousPath = "";
+
+    if (!w) {
+        leftTopPath = leftBottomPath = leftContinuousPath = "";
+    } else {
+        if (leftTopLength <= 0 && leftBottomLength <= 0) {
+            leftContinuousPath = `M ${padX} ${h - padY} V ${padY}`;
+        } else {
+            const maxVisible = Math.max(0, h - 2 * padY);
+            const topLen = Math.min(leftTopLength, maxVisible);
+            const bottomLen = Math.min(leftBottomLength, maxVisible);
+
+            if (topLen > 0) leftTopPath = `M ${padX} ${padY} V ${Math.min(padY + topLen, h - padY)}`;
+            if (bottomLen > 0) leftBottomPath = `M ${padX} ${h - padY - bottomLen} V ${h - padY}`;
+        }
+    }
 
     return (
         <div className={styles.outlineWrapper} ref={wrapperRef}>
@@ -260,17 +268,25 @@ export default function OutlineBox3({ children }: Props) {
                         preserveAspectRatio="none"
                         aria-hidden
                     >
-                        {/* top split into two visible segments with a center gap */}
-                        <path ref={topLeftRef} d={topLeftPath} className={styles.outlinePath} />
-                        <path ref={topRightRef} d={topRightPath} className={styles.outlinePath} />
+                        {/* single continuous top */}
+                        <path ref={topRef} d={topPath} className={styles.outlinePath} />
 
+                        {/* right */}
                         <path ref={rightRef} d={rightPath} className={styles.outlinePath} />
 
-                        {/* bottom now split into two segments with a smaller center gap */}
+                        {/* bottom split */}
                         <path ref={bottomLeftRef} d={bottomLeftPath} className={styles.outlinePath} />
                         <path ref={bottomRightRef} d={bottomRightPath} className={styles.outlinePath} />
 
-                        <path ref={leftRef} d={leftPath} className={styles.outlinePath} />
+                        {/* left: continuous or two segments */}
+                        {leftContinuousPath ? (
+                            <path d={leftContinuousPath} ref={leftTopRef} className={styles.outlinePath} />
+                        ) : (
+                            <>
+                                {leftTopPath && <path d={leftTopPath} ref={leftTopRef} className={styles.outlinePath} />}
+                                {leftBottomPath && <path d={leftBottomPath} ref={leftBottomRef} className={styles.outlinePath} />}
+                            </>
+                        )}
                     </svg>
                 )}
 

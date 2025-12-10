@@ -15,17 +15,7 @@
     background-size: cover;
 }
 
-/* dim the background slightly if you want (optional)
-.wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.02);
-    pointer-events: none;
-} */
-
 .container {
-
     width: 100%;
     padding: 30px;
     padding-top: 70px;
@@ -37,8 +27,7 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
-    align-items : flex-end;
-    /* ensure container background remains transparent so texture shows */
+    align-items: flex-end;
 }
 
 /* LEFT SECTION */
@@ -48,25 +37,22 @@
     margin-left: -170px; /* keep the left shift if you want */
 }
 
-
-
 .title {
     font-size: 40px;
     font-weight: 400;
     margin-bottom: 20px;
-    
     color: #393430;
     font-family: Poppins, sans-serif;
 }
 
-/* The outer element that receives transforms (moves with global mouse) */
+/* The outer element — static now (no transform animation) */
 .imageOuter {
     display: block;
     position: relative;
     width: 100%;
-    overflow: visible; /* allow movement beyond bounds so image won't be clipped */
-    will-change: transform;
-    transition: transform 120ms linear; /* subtle crispness if JS stops */
+    overflow: visible;
+    will-change: auto; /* removed transform-specific will-change */
+    transition: none; /* removed transitional animation */
 }
 
 /* Visual image box containing next/image */
@@ -75,7 +61,7 @@
     width: 94%;
     height: 460px;
     border-radius: 0px;
-    overflow: visible; /* allow image to be visible beyond box if needed */
+    overflow: visible;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
     transform-origin: center;
 }
@@ -86,18 +72,17 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 3s ease;
+        transition: none; /* removed transition so no hover scaling */
         transform-origin: center;
     }
 
-    /* optional: gentle scale on hover of the image box (kept, but harmless) */
+    /* remove hover scale — keep image static */
     .imageBox:hover :global(img) {
-        transform: scale(1.06);
+        transform: none;
     }
 
 /* RIGHT SECTION */
 .right {
-    
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -109,8 +94,7 @@
     color: #222;
     padding-top: 10px;
     padding-left: 50px;
-    z-index: 10; /* higher than moving image / outline */
-
+    z-index: 10; /* higher than outline */
 }
 
 /* category list styling */
@@ -129,13 +113,12 @@
         color: #393430;
     }
 
-        /* simple bullet before each top-level item */
         .catList > li::before {
             content: "•";
             position: absolute;
             left: -12px;
             top: 2px;
-            color: #393430; /* subtle gold-ish dot */
+            color: #393430;
             font-size: 18px;
         }
 
@@ -163,9 +146,9 @@
         height: 280px;
     }
 
-        /* disable the hover scale and pointer-driven transform on small screens */
+        /* ensure static on small screens as well */
         .imageBox:hover :global(img) {
-            transform: scale(1);
+            transform: none;
         }
 
     .imageOuter {
@@ -201,41 +184,34 @@
     cursor: pointer;
 }
 
-    /* underline base (hidden) */
     .productLink::after {
         content: "";
         position: absolute;
         left: 0;
-        bottom: -2px; /* adjust if needed */
+        bottom: -2px;
         width: 100%;
         height: 2px;
-        background-color: currentColor; /* same color as text */
+        background-color: currentColor;
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.25s ease-out;
     }
 
-    /* hover me underline left → right */
     .productLink:hover::after,
     .productLink:focus::after {
         transform: scaleX(1);
         transform-origin: left;
     }
 
-    /* mouse hatate hi reverse animation right → left */
     .productLink:not(:hover)::after {
         transform-origin: right;
     }
-
-
-
 
 .verticalBoxProduct {
     position: absolute;
     right: -150px;
     bottom: -480px;
-    width: var(--outline-vertical-width, 190px); /* optional - keeps width in sync */
-    /* set variables for the component */
+    width: var(--outline-vertical-width, 190px);
     --outline-vertical-height: 520px;
     --outline-vertical-width: 190px;
     --outline-vertical-color: black;

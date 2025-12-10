@@ -1,101 +1,21 @@
-// File: ContactSection.tsx
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "./ContactSection.module.css";
 import OutlineBox from "./OutlineBox";
 
 export default function ContactSection() {
-    const wrapperRef = useRef<HTMLDivElement | null>(null); // the element we will transform
-    const rafRef = useRef<number | null>(null);
-
-    const target = useRef({ x: 0, y: 0 });
-    const current = useRef({ x: 0, y: 0 });
-
-    const [enabled, setEnabled] = useState<boolean>(false);
-
-    // subtle maximum translation in px
-    const MAX_TRANSLATE = 14;
-
-    // enable only on larger viewports
-    useEffect(() => {
-        const updateEnabled = () => setEnabled(window.innerWidth > 900);
-        updateEnabled();
-        window.addEventListener("resize", updateEnabled);
-        return () => window.removeEventListener("resize", updateEnabled);
-    }, []);
-
-    // RAF smoothing animation
-    useEffect(() => {
-        const animate = () => {
-            const ease = 0.12;
-            current.current.x += (target.current.x - current.current.x) * ease;
-            current.current.y += (target.current.y - current.current.y) * ease;
-
-            if (wrapperRef.current) {
-                wrapperRef.current.style.transform = `translate3d(${current.current.x}px, ${current.current.y}px, 0)`;
-            }
-
-            rafRef.current = requestAnimationFrame(animate);
-        };
-
-        rafRef.current = requestAnimationFrame(animate);
-        return () => {
-            if (rafRef.current) cancelAnimationFrame(rafRef.current);
-        };
-    }, []);
-
-    // Use global mouse position (relative to viewport center)
-    useEffect(() => {
-        if (!enabled) return;
-
-        const handleGlobalMove = (e: MouseEvent) => {
-            // normalized -0.5 .. 0.5 across the viewport
-            const nx = e.clientX / window.innerWidth - 0.5;
-            const ny = e.clientY / window.innerHeight - 0.5;
-
-            // invert Y slightly for more natural parallax
-            target.current.x = nx * MAX_TRANSLATE;
-            target.current.y = -ny * MAX_TRANSLATE;
-        };
-
-        const handleLeaveWindow = () => {
-            target.current.x = 0;
-            target.current.y = 0;
-        };
-
-        window.addEventListener("mousemove", handleGlobalMove, { passive: true });
-        window.addEventListener("mouseout", handleLeaveWindow);
-        window.addEventListener("mouseleave", handleLeaveWindow);
-
-        return () => {
-            window.removeEventListener("mousemove", handleGlobalMove);
-            window.removeEventListener("mouseout", handleLeaveWindow);
-            window.removeEventListener("mouseleave", handleLeaveWindow);
-        };
-    }, [enabled]);
-
-    // When effect is disabled (small screens), ensure target resets
-    useEffect(() => {
-        if (!enabled) {
-            target.current.x = 0;
-            target.current.y = 0;
-        }
-    }, [enabled]);
-
-    // OPTIONAL: example inline style showing how to tweak the offsets.
-    // You can remove the `style={...}` prop below or change the values (-80px, -40px) to suit.
+    // OPTIONAL: keep offsets for BG logo
     const containerStyle = {
         ["--logo-offset-x"]: "-80px",
         ["--logo-offset-y"]: "-40px",
-    } as React.CSSProperties;
 
+    } as React.CSSProperties;
 
     return (
         <section className={styles.wrapper} aria-labelledby="our-story-title">
-            {/* Background logo (positioned absolute in the wrapper) */}
-            {/* It's placed before the OutlineBox so it sits behind content (lower z-index) */}
+            {/* Background logo */}
             <img
                 src="/homepage/logo.png"
                 alt=""
@@ -107,11 +27,11 @@ export default function ContactSection() {
                 <div className={styles.container} style={containerStyle}>
                     <div className={styles.left}>
                         <h2 id="our-story-title" className={styles.title}>
-                            Contact
+                            Connect
                         </h2>
 
-                        {/* transform applied to this outer wrapper (moves with global mouse) */}
-                        <div className={styles.imageOuter} ref={wrapperRef}>
+                        {/* Image is now STATIC */}
+                        <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
                                     src="/homepage/contact-image.png"
@@ -126,50 +46,60 @@ export default function ContactSection() {
                     </div>
 
                     <div className={styles.right}>
+                        {/* Container for right column content */}
                         <div>
-                            {/* Logo */}
                             <div className={styles.logoBox}>
                                 <Image
-                                    src="/homepage/vriksha-logo.svg"
+                                    src="/homepage/contact-vriksha-logo.png"
                                     alt="Vriksha Logo"
-                                    width={160}
-                                    height={130}
+                                    width={180}
+                                    height={145}
                                     className={styles.logo}
                                 />
                                 <div className={styles.brandLine}>Indian Home Decor Studio</div>
                             </div>
 
-                            {/* Contact Names */}
                             <div className={styles.personLine}>
-                                Vasumathi Ramesh: 9940419286
-                                Ramesh Kannan: 9444403249
+                                <p>Vasumathi Ramesh: 9940419286</p>
+                                <p>Ramesh Kannan: 9444403249 </p>
                             </div>
 
                             <div className={styles.space} />
 
-                            {/* Address */}
                             <div className={styles.address}>
-                                1B, Prince Arcade, 22A, Cathedral Road<br />
-                                Chennai 600086
+                                <p>1B, Prince Arcade</p>
+                                <p>22A, Cathedral Road </p>
+                                <p>Chennai 600086</p>
                             </div>
 
                             <div className={styles.space} />
 
-                            {/* Email + Website */}
                             <div className={styles.infoLine}>vrikshaa@gmail.com</div>
                             <div className={styles.infoLine}>www.vriksha.co.in</div>
 
                             <div className={styles.space} />
 
-                            {/* Social Links */}
+                            {/* Social links — each link shows two stacked spans */}
                             <div className={styles.socialLinks}>
-                                https://www.facebook.com/
-                                VrikshaAPresentationPort/
-                            </div>
+                                <a
+                                    href="https://www.facebook.com/VrikshaAPresentationPort/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.socialLink}
+                                >
+                                    <span>https://www.facebook.com/</span>
+                                    <span>VrikshaAPresentationPort/</span>
+                                </a>
 
-                            <div className={styles.socialLinks}>
-                                https://www.instagram.com/
-                                vrikshapresentationport/
+                                <a
+                                    href="https://www.instagram.com/vrikshapresentationport/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.socialLink}
+                                >
+                                    <span>https://www.instagram.com/</span>
+                                    <span>vrikshapresentationport/</span>
+                                </a>
                             </div>
                         </div>
                     </div>
