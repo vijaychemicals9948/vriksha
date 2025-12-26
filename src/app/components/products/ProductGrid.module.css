@@ -1,0 +1,64 @@
+﻿.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 👈 Fixed 3 columns */
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 12px;
+    margin-bottom: 220px;
+    padding-top: 70px;
+}
+
+
+.card {
+    padding: 16px;
+    border-radius: 0px;
+    background: #fff;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+.imgWrap {
+    width: 100%;
+    height: 352px;
+    overflow: hidden;
+    border-radius: 0px;
+    cursor: pointer; /* 👈 Added this */
+}
+
+.productImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .45s ease;
+}
+
+.imgWrap:hover .productImg {
+    transform: scale(1.05);
+}
+
+.productTitle {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* --- Mobile improvements --- */
+@media (max-width: 480px) {
+    .imgWrap {
+        height: 200px;
+    }
+
+    .productTitle {
+        font-size: 16px;
+    }
+}
+
+

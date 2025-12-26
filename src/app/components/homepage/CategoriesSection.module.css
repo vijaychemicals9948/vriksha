@@ -10,7 +10,7 @@
 /* square ratio */
 .cardRatio {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.48;
     box-sizing: border-box;
     overflow: hidden;
     display: block;
@@ -102,4 +102,22 @@
         width: 100%;
         flex: 0 0 100%;
     }
+}
+
+
+.cardLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hover animation */
+.cardRatio {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cardLink:hover .cardRatio {
+    transform: translateY(-6px);
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
 }

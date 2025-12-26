@@ -17,7 +17,7 @@ export default function OutlineBox3({
     bottomGap,
     bottomGapRatio = 0.65,
     leftTopLength = 60,
-    leftBottomLength = 1550,
+    leftBottomLength = 2260,
 }: Props) {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);

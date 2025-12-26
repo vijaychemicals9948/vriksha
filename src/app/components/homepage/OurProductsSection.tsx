@@ -5,81 +5,111 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./OurProductsSection.module.css";
 import OutlineBox from "./OutlineBox2";
-import { productsData } from "@/data/productsData"; // <- kept
-import OutlineBoxVertical from "./OutlineBoxVertical";
 
-// re-use a simple ProductItem type for TS clarity
-interface ProductItem {
+/** Data structure */
+interface ProductCategory {
     title: string;
-    children?: ProductItem[];
+    href: string;
+    children?: ProductCategory[];
 }
 
-/** Basic slugify: lowercase, trim, remove non-word chars, spaces -> dashes */
-const slugify = (s: string) =>
-    s
-        .toLowerCase()
-        .trim()
-        .replace(/[^\w\s-]/g, "") // remove punctuation (keeps word chars, spaces, hyphens)
-        .replace(/\s+/g, "-"); // spaces -> hyphens
+/** MANUAL PRODUCT LIST */
+const PRODUCT_LIST: ProductCategory[] = [
+    {
+        title: "Brass idols on silk",
+        href: "/products/brass-idols-on-silk",
+    },
+    {
+        title: "Brass idols on silk & gold",
+        href: "/products/brass-idols-on-gold-metal-art",
+    },
+    {
+        title: "Brass idols on solid wood",
+        href: "/products/brass-on-solid-wood",
+    },
+    {
+        title: "Gold coated metal art",
+        href: "/products/gold-metal-art",
+    },
+    {
+        title: "Serving trays with gold metal art",
+        href: "/products/serving-trays",
+    },
+    {
+        title: "Pooja room series",
+        href: "/products/pooja-room-series",
+        children: [
+            {
+                title: "Miniature gods on silk",
+                href: "/products/pooja-room-series/miniature-gods",
+            },
+            {
+                title: "Various gods series",
+                href: "/products/pooja-room-series/various-gods-series",
+            },
+            {
+                title: "Gods on gold coated metal art",
+                href: "/products/pooja-room-series/gods-on-gold-metal",
+            },
+            {
+                title: "Ashtalakshmi series",
+                href: "/products/pooja-room-series/ashtalakshmi-series",
+            },
+            {
+                title: "Dasavatar series",
+                href: "/products/pooja-room-series/dasavatar",
+            },
+            {
+                title: "Arupadai veedu series",
+                href: "/products/pooja-room-series/arupadai-veedu",
+            },
+            {
+                title: "Gods on solid wood",
+                href: "/products/pooja-room-series/gods-on-solid-wood",
+            },
+        ],
+    },
+    {
+        title: "Prabhavali series",
+        href: "/products/indian-art-on-prabhavali",
+        children: [
+            {
+                title: "Indian art on prabhavali",
+                href: "/products/indian-art-on-prabhavali/indianart-on-prabhavali",
+            },
+            {
+                title: "Indian gods on prabhavali",
+                href: "/products/indian-art-on-prabhavali/gods-on-prabhavali",
+            },
+            {
+                title: "Indian gods with gold on prabhavali",
+                href: "/products/indian-art-on-prabhavali/gods-on-prabhavali",
+            },
+        ],
+    },
+    {
+        title: "Exquisite custom made mementos",
+        href: "/products/mementos",
+        children: [
+            {
+                title: "Theme based – Personal / Corporate",
+                href: "/products/mementos",
+            },
+        ],
+    },
+];
 
 export default function OurProductsSection() {
-    // Recursive renderer to output the same structure (top-level li and nested ul for children)
-    const renderItems = (items: ProductItem[]) => {
-        return items.map((it, idx) => {
-            const slug = slugify(it.title);
-            return (
-                <li key={idx}>
-                    <Link href={`/products/${slug}`} className={styles.productLink}>
-                        {it.title}
-                    </Link>
-
-                    {it.children && it.children.length > 0 && (
-                        <ul>
-                            {it.children.map((child, cidx) => {
-                                const childSlug = slugify(child.title);
-                                return (
-                                    <li key={cidx}>
-                                        <Link href={`/products/${childSlug}`} className={styles.productLink}>
-                                            {child.title}
-                                        </Link>
-
-                                        {child.children && child.children.length > 0 && (
-                                            <ul>
-                                                {child.children.map((gc, gidx) => {
-                                                    const gcSlug = slugify(gc.title);
-                                                    return (
-                                                        <li key={gidx}>
-                                                            <Link href={`/products/${gcSlug}`} className={styles.productLink}>
-                                                                {gc.title}
-                                                            </Link>
-                                                        </li>
-                                                    );
-                                                })}
-                                            </ul>
-                                        )}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    )}
-                </li>
-            );
-        });
-    };
-
     return (
-        <section
-            className={styles.wrapper}
-            aria-labelledby="our-products-title"
-        >
-            <OutlineBox>
+        <section className={styles.wrapper} aria-labelledby="our-products-title">
+            <OutlineBox delay={600}>
                 <div className={styles.container}>
+                    {/* LEFT */}
                     <div className={styles.left}>
                         <h2 id="our-products-title" className={styles.title}>
                             Our products
                         </h2>
 
-                        {/* Static image wrapper (no animation) */}
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
@@ -94,13 +124,37 @@ export default function OurProductsSection() {
                         </div>
                     </div>
 
+                    {/* RIGHT */}
                     <div className={styles.right}>
                         <ul className={styles.catList}>
-                            {renderItems(productsData as ProductItem[])}
+                            {PRODUCT_LIST.map((cat) => (
+                                <li key={cat.href}>
+                                    <Link
+                                        href={cat.href}
+                                        className={styles.productLink}
+                                    >
+                                        {cat.title}
+                                    </Link>
+
+                                    {cat.children && (
+                                        <ul>
+                                            {cat.children.map((sub, index) => (
+                                                <li key={`${sub.href}-${index}`}>
+                                                    <Link
+                                                        href={sub.href}
+                                                        className={styles.productLink}
+                                                    >
+                                                        {sub.title}
+                                                    </Link>
+                                                </li>
+                                            ))}
+
+                                        </ul>
+                                    )}
+                                </li>
+                            ))}
                         </ul>
                     </div>
-
-                    <OutlineBoxVertical className={styles.verticalBoxProduct} />
                 </div>
             </OutlineBox>
         </section>

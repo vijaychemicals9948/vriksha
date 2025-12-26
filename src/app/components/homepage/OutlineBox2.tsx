@@ -2,11 +2,37 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./OutlineBox2.module.css";
 
-type Props = { children: React.ReactNode };
+type Props = {
+    children: React.ReactNode;
+    delay?: number; // animation delay (ms)
+};
 
-export default function OutlineBox({ children }: Props) {
+export default function OutlineBox({ children, delay = 0 }: Props) {
+
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);
+
+
+    const playAnimation = () => {
+        if (completedRef.current) return;
+
+        const start = () => {
+            targetProgressRef.current = 1;
+            if (rafRef.current === null) {
+                rafRef.current = requestAnimationFrame(animate);
+            }
+        };
+
+        if (delay > 0) {
+            setTimeout(start, delay); // ⏳ delay here
+        } else {
+            start();
+        }
+    };
+
+
+
+
 
     // SVG path refs
     const topRef = useRef<SVGPathElement | null>(null);
@@ -200,29 +226,42 @@ export default function OutlineBox({ children }: Props) {
     };
 
     useEffect(() => {
-        // initial compute
-        recomputeSvg();
-        computeTargetProgress();
+        const box = boxRef.current;
+        if (!box) return;
 
-        const onScrollOrResize = () => {
-            // if already completed, don't bother recomputing target (prevents flicker)
-            if (completedRef.current) return;
-            computeTargetProgress();
+        let started = false;
+
+        const startIfReady = () => {
             recomputeSvg();
+
+            const { w, h } = svgSize;
+            if (w > 50 && h > 50 && !started) {
+                started = true;
+
+                // small delay to ensure SVG paths exist
+                requestAnimationFrame(() => {
+                    playAnimation();
+                });
+            }
         };
 
-        window.addEventListener("scroll", onScrollOrResize, { passive: true });
-        window.addEventListener("resize", onScrollOrResize);
-        window.addEventListener("orientationchange", onScrollOrResize);
+        // observe size changes (images / fonts load hone ke baad bhi)
+        const ro = new ResizeObserver(() => {
+            startIfReady();
+        });
+
+        ro.observe(box);
+
+        // initial attempt
+        startIfReady();
 
         return () => {
-            window.removeEventListener("scroll", onScrollOrResize);
-            window.removeEventListener("resize", onScrollOrResize);
-            window.removeEventListener("orientationchange", onScrollOrResize);
+            ro.disconnect();
             if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [svgSize.w, svgSize.h]);
+
 
     // build path coordinates based on measured svg size
     const { w, h } = svgSize;
@@ -232,7 +271,7 @@ export default function OutlineBox({ children }: Props) {
     const padY = 70;
 
     // left short segments height
-    const leftTopH = 250;
+    const leftTopH = 190;
     const leftBottomH = 120;
 
     // path strings
