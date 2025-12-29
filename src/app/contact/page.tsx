@@ -1,17 +1,18 @@
-//src/app/components/homepage/ContactSection.tsx
+// src/app/contact/page.tsx
+
+
 "use client";
 
 import React from "react";
 import Image from "next/image";
 import styles from "./ContactSection.module.css";
-import OutlineBox from "./OutlineBox";
+import OutlineBoxContact from "./OutlineBoxContact";
 
-export default function ContactSection() {
+export default function ContactPage() {
     // OPTIONAL: keep offsets for BG logo
     const containerStyle = {
         ["--logo-offset-x"]: "-80px",
         ["--logo-offset-y"]: "-40px",
-
     } as React.CSSProperties;
 
     return (
@@ -24,14 +25,14 @@ export default function ContactSection() {
                 className={styles.bgLogo}
             />
 
-            <OutlineBox>
+            <OutlineBoxContact>
                 <div className={styles.container} style={containerStyle}>
                     <div className={styles.left}>
                         <h2 id="our-story-title" className={styles.title}>
                             Connect
                         </h2>
 
-                        {/* Image is now STATIC */}
+                        {/* Image is STATIC */}
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
@@ -47,7 +48,6 @@ export default function ContactSection() {
                     </div>
 
                     <div className={styles.right}>
-                        {/* Container for right column content */}
                         <div>
                             <div className={styles.logoBox}>
                                 <Image
@@ -57,30 +57,36 @@ export default function ContactSection() {
                                     height={145}
                                     className={styles.logo}
                                 />
-                                <div className={styles.brandLine}>Indian Home Decor Studio</div>
+                                <div className={styles.brandLine}>
+                                    Indian Home Decor Studio
+                                </div>
                             </div>
 
                             <div className={styles.personLine}>
                                 <p>Vasumathi Ramesh: 9940419286</p>
-                                <p>Ramesh Kannan: 9444403249 </p>
+                                <p>Ramesh Kannan: 9444403249</p>
                             </div>
 
                             <div className={styles.space} />
 
                             <div className={styles.address}>
                                 <p>1B, Prince Arcade</p>
-                                <p>22A, Cathedral Road </p>
+                                <p>22A, Cathedral Road</p>
                                 <p>Chennai 600086</p>
                             </div>
 
                             <div className={styles.space} />
 
-                            <div className={styles.infoLine}>vrikshaa@gmail.com</div>
-                            <div className={styles.infoLine}>www.vriksha.co.in</div>
+                            <div className={styles.infoLine}>
+                                vrikshaa@gmail.com
+                            </div>
+                            <div className={styles.infoLine}>
+                                www.vriksha.co.in
+                            </div>
 
                             <div className={styles.space} />
 
-                            {/* Social links — each link shows two stacked spans */}
+                            {/* Social links */}
                             <div className={styles.socialLinks}>
                                 <a
                                     href="https://www.facebook.com/VrikshaAPresentationPort/"
@@ -105,7 +111,7 @@ export default function ContactSection() {
                         </div>
                     </div>
                 </div>
-            </OutlineBox>
+            </OutlineBoxContact>
         </section>
     );
 }

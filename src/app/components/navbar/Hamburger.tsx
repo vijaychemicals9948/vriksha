@@ -69,9 +69,8 @@ export default function Hamburger({ open, setOpen }: Props) {
 
     const mainLinks = [
         { href: "/", label: "Home" },
-        { href: "/about", label: "Our Story" },
+        
         { href: "/products", label: "Our Products" },
-        { href: "/blog", label: "Blog" },
         { href: "/contact", label: "Contact" },
     ];
 

@@ -139,7 +139,7 @@ export const PRODUCT_CATEGORIES = {
         banner: "/products/gold-metal-art/gold-metalart-banner.webp",
         products: [
             { id: 1, title: "Apsara – Jaipur Palace", img: "/products/gold-metal-art/product-images/apsara-jaipur-palace.webp" },
-            { id: 2, title: "Apsaras on Gold (10x12)", img: "/products/gold-metal-art/product-images/apsaras-on-gold-10x12.webp" },
+            
             { id: 3, title: "Apsaras on Gold (18x24)", img: "/products/gold-metal-art/product-images/apsaras-on-gold-18x24.webp" },
             { id: 4, title: "Buddha with Tree of Life", img: "/products/gold-metal-art/product-images/budha-with-tree-of-life.webp" },
             { id: 5, title: "Buddha", img: "/products/gold-metal-art/product-images/budha.webp" },
@@ -225,7 +225,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "ashtalakshmi-series",
                 title: "Ashtalakshmi Series",
                 thumb: "/products/pooja-room-series/ashtalakshmi-series/santhanalakshmi.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/ashtalakshmi-series/ashtalakshmi-series-banner.webp",
 
                 products: [
                     { id: 1, title: "Aadhi Lakshmi", img: "/products/pooja-room-series/ashtalakshmi-series/aadhilakshmi.webp" },
@@ -245,7 +245,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "dasavatar",
                 title: "Dasavatar Series",
                 thumb: "/products/pooja-room-series/dasavatar/matsya.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/dasavatar/dasavatar -series-banner.webp",
 
                 products: [
                     { id: 1, title: "Matsya Avatar", img: "/products/pooja-room-series/dasavatar/matsya.webp" },
@@ -266,7 +266,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "gods-on-gold-metal",
                 title: "Gods on Gold Metal",
                 thumb: "/products/pooja-room-series/gods-on-gold-metal/alamelu-face.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/gods-on-gold-metal/gods-on-gold-metal-banner.webp",
 
                 products: [
                     { id: 1, title: "Aandaal", img: "/products/pooja-room-series/gods-on-gold-metal/aandaal.webp" },
@@ -318,7 +318,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "gods-on-solid-wood",
                 title: "Gods on Solid Wood",
                 thumb: "/products/pooja-room-series/gods-on-solid-wood/siva-parvati.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/gods-on-solid-wood/gods-on-wood-banner.webp",
 
                 products: [
                     { id: 1, title: "Aandaal", img: "/products/pooja-room-series/gods-on-solid-wood/aandaal.webp" },
@@ -347,7 +347,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "miniature-gods",
                 title: "Miniature Gods",
                 thumb: "/products/pooja-room-series/miniature-gods/balaji.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/miniature-gods/miniature-gods-series.webp",
 
                 products: [
                     { id: 1, title: "Balaji", img: "/products/pooja-room-series/miniature-gods/balaji.webp" },
@@ -375,7 +375,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "various-gods-series",
                 title: "Various Gods Series",
                 thumb: "/products/pooja-room-series/various-gods-series/01-ganesha-face.webp",
-                banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+                banner: "/products/pooja-room-series/various-gods-series/various-gods-series-banner.webp",
 
                 products: [
                     { id: 1, title: "Ganesha Face", img: "/products/pooja-room-series/various-gods-series/01-ganesha-face.webp" },
@@ -403,14 +403,14 @@ export const PRODUCT_CATEGORIES = {
     },
 
     "indian-art-on-prabhavali": {
-        banner: "/products/indian-art-on-prabhavali/indian-art-on-prabhavali-banner.webp",
+        banner: "/products/indian-art-on-prabhavali/indian-art-on-prabhavali-banner2.webp",
         subcategories: [
 
             {
                 slug: "gods-on-prabhavali",
                 title: "Gods on Prabhavali",
                 thumb: "/products/indian-art-on-prabhavali/gods-on-prabhavali/aiyappan.webp",
-                banner: "/products/indian-art-on-prabhavali/indian-art-on-prabhavali-banner.webp",
+                banner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner.webp",
 
                 products: [
                     { id: 1, title: "Aiyappan", img: "/products/indian-art-on-prabhavali/gods-on-prabhavali/aiyappan.webp" },

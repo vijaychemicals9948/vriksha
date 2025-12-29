@@ -1,4 +1,4 @@
-// ProductGrid.tsx
+﻿// ProductGrid.tsx
 "use client";
 
 import styles from "./ProductGrid.module.css";
@@ -31,7 +31,8 @@ export default function ProductGrid({ products, onOpen }: Props) {
                     >
                         <img src={p.img} alt={p.title} className={styles.productImg} />
                     </div>
-                    <h3 className={styles.productTitle}>{p.title}</h3>
+                    {/* ❌ Product name removed */}
+                    {/* <h3 className={styles.productTitle}>{p.title}</h3> */}
                 </div>
             ))}
         </div>

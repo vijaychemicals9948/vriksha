@@ -33,7 +33,7 @@ export default function SubCategoryGrid({ baseSlug, subcategories }: Props) {
                         height={400}
                     />
 
-                    <div className={styles.title}>{sub.title}</div>
+                    
                 </Link>
             ))}
         </div>
