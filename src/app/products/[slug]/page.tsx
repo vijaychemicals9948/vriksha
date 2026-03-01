@@ -12,28 +12,26 @@ import { PRODUCT_CATEGORIES } from "@/data/productsData";
 export default function ProductCategoryPage() {
     const params = useParams();
 
-    // ✅ Hooks ALWAYS at top
     const [modalOpen, setModalOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const slugParam = params.slug;
-
     if (!slugParam) return notFound();
 
-    const slug = Array.isArray(slugParam)
-        ? slugParam[0]
-        : slugParam;
+    const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam;
 
-    const category =
-        PRODUCT_CATEGORIES[slug as keyof typeof PRODUCT_CATEGORIES];
+    const category = PRODUCT_CATEGORIES[slug as string];
 
     if (!category) return notFound();
 
-    // ✅ Parent category → subcategories
-    if ("subcategories" in category) {
+    // 🔹 If category has subcategories
+    if (category.subcategories) {
         return (
             <>
-                <HeroCover src={category.banner} />
+                <HeroCover
+                    desktopSrc={category.banner}
+                    mobileSrc={category.mobileBanner}
+                />
                 <SubCategoryGrid
                     baseSlug={slug}
                     subcategories={category.subcategories}
@@ -42,15 +40,18 @@ export default function ProductCategoryPage() {
         );
     }
 
-    // ✅ Normal category → products
-    const { banner, products } = category;
+    // 🔹 Normal category with products
+    if (!category.products) return notFound();
 
     return (
         <>
-            <HeroCover src={banner} />
+            <HeroCover
+                desktopSrc={category.banner}
+                mobileSrc={category.mobileBanner}
+            />
 
             <ProductGrid
-                products={products}
+                products={category.products}
                 onOpen={(i) => {
                     setActiveIndex(i);
                     setModalOpen(true);
@@ -58,7 +59,7 @@ export default function ProductCategoryPage() {
             />
 
             <ImageModal
-                products={products}
+                products={category.products}
                 open={modalOpen}
                 activeIndex={activeIndex}
                 onClose={() => {
@@ -68,7 +69,8 @@ export default function ProductCategoryPage() {
                 onMove={(dir) => {
                     if (activeIndex === null) return;
                     setActiveIndex(
-                        (activeIndex + dir + products.length) % products.length
+                        (activeIndex + dir + category.products!.length) %
+                        category.products!.length
                     );
                 }}
             />

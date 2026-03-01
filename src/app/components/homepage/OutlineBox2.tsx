@@ -12,7 +12,6 @@ export default function OutlineBox({ children, delay = 0 }: Props) {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);
 
-
     const playAnimation = () => {
         if (completedRef.current) return;
 
@@ -29,10 +28,6 @@ export default function OutlineBox({ children, delay = 0 }: Props) {
             start();
         }
     };
-
-
-
-
 
     // SVG path refs
     const topRef = useRef<SVGPathElement | null>(null);
@@ -79,9 +74,6 @@ export default function OutlineBox({ children, delay = 0 }: Props) {
         if (completedRef.current) {
             targetProgressRef.current = 1;
         } else {
-            // allow target to move forward/back by default,
-            // but if you prefer "only forward" drawing, use:
-            // targetProgressRef.current = Math.max(progress, targetProgressRef.current);
             targetProgressRef.current = progress;
         }
 
@@ -266,9 +258,22 @@ export default function OutlineBox({ children, delay = 0 }: Props) {
     // build path coordinates based on measured svg size
     const { w, h } = svgSize;
 
-    // padding inside the visual box (match your previous padding)
-    const padX = 30;
-    const padY = 70;
+    // padding inside the visual box (responsive: smaller pads for mobile)
+    const padX = (() => {
+        // w is the svg width measured above
+        if (!w) return 30;
+        if (w <= 420) return 12;   // small phones — outline snug to edges
+        if (w <= 760) return 18;   // larger phones / small tablets
+        return 30;                 // desktop (unchanged)
+    })();
+
+    const padY = (() => {
+        if (!w) return 70;
+        if (w <= 420) return 28;   // reduce vertical inset on tiny screens
+        if (w <= 760) return 50;   // moderate reduction on small tablets
+        return 70;
+    })();
+
 
     // left short segments height
     const leftTopH = 190;

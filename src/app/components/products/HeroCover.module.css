@@ -1,7 +1,15 @@
+/*HeroCover.module.css*/
 .heroSection {
     height: 80vh;
     width: 100%;
     overflow: hidden;
+}
+
+/* Mobile height reduce */
+@media (max-width: 768px) {
+    .heroSection {
+        height: 95vh;
+    }
 }
 
 .heroImage {

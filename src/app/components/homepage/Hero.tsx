@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import styles from "./HeroSection.module.css";
 
-const images = [
+/* Desktop banners */
+const desktopImages = [
     "/homepage/final1.png",
     "/homepage/final2.png",
     "/homepage/final4.png",
@@ -11,26 +12,50 @@ const images = [
     "/homepage/hero8.webp",
 ];
 
+/* Mobile banners */
+const mobileImages = [
+    "/homepage/mobile/brass-decor-mobile-version.webp",
+    "/homepage/mobile/prabhavali.webp",
+    "/homepage/mobile/gold-metal-mobile-version.webp",
+    "/homepage/mobile/mementos.webp",
+    "/homepage/mobile/gold-metal-brass.webp",
+];
+
+
 export default function HeroSection() {
     const [index, setIndex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
 
+    const images = isMobile ? mobileImages : desktopImages;
+
+    /* detect mobile */
     useEffect(() => {
-        // 1) First slide changes quickly after 2 seconds
+        const checkDevice = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkDevice();
+        window.addEventListener("resize", checkDevice);
+
+        return () => window.removeEventListener("resize", checkDevice);
+    }, []);
+
+    /* slider only for desktop (mobile me ek hi image hai) */
+    useEffect(() => {
+        if (images.length <= 1) return;
+
         const firstTimeout = setTimeout(() => {
             setIndex(i => (i + 1) % images.length);
 
-            // 2) After first change, start regular 4-sec interval
             const interval = setInterval(() => {
                 setIndex(i => (i + 1) % images.length);
             }, 4000);
 
-            // Cleanup interval only
             return () => clearInterval(interval);
         }, 2000);
 
-        // Cleanup timeout when component unmounts
         return () => clearTimeout(firstTimeout);
-    }, []);
+    }, [images]);
 
     return (
         <section className={styles.hero}>
@@ -42,17 +67,20 @@ export default function HeroSection() {
                 />
             ))}
 
-            <div className={styles.overlay}></div>
+            <div className={styles.overlay} />
 
-            <div className={styles.dots}>
-                {images.map((_, i) => (
-                    <div
-                        key={i}
-                        className={`${styles.dot} ${i === index ? styles.activeDot : ""}`}
-                        onClick={() => setIndex(i)}
-                    ></div>
-                ))}
-            </div>
+            {/* dots sirf desktop pe */}
+            {images.length > 1 && (
+                <div className={styles.dots}>
+                    {images.map((_, i) => (
+                        <div
+                            key={i}
+                            className={`${styles.dot} ${i === index ? styles.activeDot : ""}`}
+                            onClick={() => setIndex(i)}
+                        />
+                    ))}
+                </div>
+            )}
         </section>
     );
 }

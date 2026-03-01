@@ -30,7 +30,8 @@ export default function SubCategoryPage() {
     const parent =
         PRODUCT_CATEGORIES[slug as keyof typeof PRODUCT_CATEGORIES];
 
-    if (!parent || !("subcategories" in parent)) return notFound();
+    if (!parent?.subcategories) return notFound();
+
 
     // current subcategory
     const subcategory = parent.subcategories.find(
@@ -42,7 +43,12 @@ export default function SubCategoryPage() {
     return (
         <>
             {/* 🔹 Hero / Banner */}
-            <HeroCover src={subcategory.banner} />
+            <HeroCover
+                desktopSrc={subcategory.banner}
+                mobileSrc={subcategory.mobileBanner}
+            />
+
+
 
             {/* 🔹 Products Grid */}
             <ProductGrid

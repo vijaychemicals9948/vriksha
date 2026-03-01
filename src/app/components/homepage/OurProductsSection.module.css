@@ -1,6 +1,4 @@
-﻿/* OurProductsSection.module.css */
-
-/* Section wrapper now has the texture background */
+﻿/* Section wrapper now has the texture background */
 .wrapper {
     position: relative; /* <-- IMPORTANT: so absolute children position relative to this section */
     padding-top: 120px;
@@ -57,13 +55,13 @@
 
 /* Visual image box containing next/image */
 .imageBox {
-    position: relative;
+    position: relative; /* required for next/image fill */
     width: 94%;
-    height: 460px;
+    max-width: 560px; /* optional cap so it doesn't grow too huge on very large screens */
+    aspect-ratio: 1 / 1; /* 🔥 square lock - kept everywhere */
     border-radius: 0px;
-    overflow: visible;
+    overflow: hidden;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
-    transform-origin: center;
 }
 
     /* target the generated img inside next/image - Next adds an img inside a wrapper */
@@ -140,23 +138,53 @@
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
+        padding: 130px 5px; /* <- tightened mobile side padding to match OurStory mobile */
     }
 
+    /* Make title left-aligned on small screens and flush to screen */
+    .title {
+        margin-left: 0;
+        text-align: left;
+        font-size: 32px; /* keeps visual weight similar to OurStory mobile */
+    }
+
+    /* Keep imageBox square on mobile too */
     .imageBox {
-        height: 280px;
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 1 / 1; /* KEEP square */
+        border-radius: 0px;
+        overflow: hidden;
+        background-color: #f5f5f5; /* optional background for empty space */
+        box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
     }
-
-        /* ensure static on small screens as well */
-        .imageBox:hover :global(img) {
-            transform: none;
-        }
 
     .imageOuter {
         transform: none !important;
     }
 
+    /* remove the desktop negative left margin so content is flush to the left edge */
     .left {
         margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Left align the right column and remove left padding that centered it visually */
+    .right {
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
+        margin-top: 18px; /* small gap below image */
+    }
+
+    /* ensure the list floats to the left edge of the container */
+    .catList {
+        padding-left: 6px;
     }
 }
 
@@ -165,12 +193,22 @@
         font-size: 26px;
     }
 
-    .imageBox {
-        height: 240px;
-    }
-
+    /* removed fixed height — rely on aspect-ratio */
     .catList > li::before {
         left: -10px;
+    }
+
+    /* on very small screens keep small internal padding so lines don't touch edge */
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    /* tighten right column typography for mobile */
+    .right,
+    .right * {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
     }
 }
 

@@ -83,3 +83,19 @@
     transform: scale(1.3);
     box-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100svh;
+    }
+
+    .slide {
+        background-position: center;
+    }
+
+    .dots {
+        bottom: 20px;
+    }
+}

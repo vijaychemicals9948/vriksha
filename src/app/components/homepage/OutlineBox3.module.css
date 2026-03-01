@@ -53,7 +53,15 @@
 }
 
 @media (max-width: 600px) {
+
+    .outlineWrapper {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
     .outlineBox {
-        padding: 28px 16px;
+        width: 100%;
+        padding: 24px 12px;
     }
 }
+

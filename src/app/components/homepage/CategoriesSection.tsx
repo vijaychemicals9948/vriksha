@@ -1,4 +1,5 @@
-﻿"use client";
+﻿//CategoriesSection.tsx
+"use client";
 import React from "react";
 import Link from "next/link";
 import OutlineBox from "./OutlineBox3";

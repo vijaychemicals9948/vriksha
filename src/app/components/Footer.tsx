@@ -22,18 +22,37 @@ export default function Footer() {
                 </p>
 
                 <div className={styles.social}>
-                    <a href="#" aria-label="Facebook" className={styles.socialIcon}>
+                    <a
+                        href="https://www.facebook.com/VrikshaAPresentationPort"
+                        aria-label="Facebook"
+                        className={styles.socialIcon}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <FaFacebookF />
                     </a>
 
-                    <a href="#" aria-label="Instagram" className={styles.socialIcon}>
+                    <a
+                        href="https://www.instagram.com/vrikshapresentationport"
+                        aria-label="Instagram"
+                        className={styles.socialIcon}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <FaInstagram />
                     </a>
 
-                    <a href="#" aria-label="YouTube" className={styles.socialIcon}>
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                        className={styles.socialIcon}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <FaYoutube />
                     </a>
                 </div>
+
 
                 <div className={styles.footerLine}></div>
 

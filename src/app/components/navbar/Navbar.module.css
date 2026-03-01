@@ -31,3 +31,31 @@
     .logo img {
         display: block;
     }
+
+
+
+@media (max-width: 768px) {
+    .container {
+        justify-content: center;
+        padding-top: 40px;
+        position: relative;
+        height: 150px; /* navbar height smaller on mobile */
+    }
+
+    .logo {
+        position: absolute;
+        left: 52%;
+        transform: translateX(-50%);
+    }
+
+        .logo img {
+            
+            width: 90px;
+            height: auto;
+        }
+
+    .right {
+        position: absolute;
+        right: 10px;
+    }
+}

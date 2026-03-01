@@ -4,7 +4,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     align-items: start;
-
 }
 
 /* square ratio */
@@ -88,6 +87,41 @@
 }
 
 @media (max-width: 600px) {
+    /* --- MOBILE ONLY CHANGES --- */
+
+    /* Make the grid single-column so cards show one-per-row */
+    .gridWrapper {
+        grid-template-columns: 1fr;
+        gap: 16px; /* slightly smaller gap on mobile */
+    }
+
+
+    .cardRatio {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+
+
+    /* Ensure any full-row items still span correctly */
+    .gridItemFull {
+        grid-column: 1 / -1;
+    }
+
+    /* Title: smaller and left-aligned on mobile (no absolute positioning) */
+    .sectionTitle {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        font-size: 28px;
+        font-weight: 500;
+        margin: 0 0 12px 0;
+        text-align: left;
+        pointer-events: none;
+        z-index: 10;
+    }
+
     .header h2 {
         font-size: 28px;
     }

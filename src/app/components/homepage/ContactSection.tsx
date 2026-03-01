@@ -1,4 +1,4 @@
-//src/app/components/homepage/ContactSection.tsx
+// src/app/components/homepage/ContactSection.tsx
 "use client";
 
 import React from "react";
@@ -11,11 +11,10 @@ export default function ContactSection() {
     const containerStyle = {
         ["--logo-offset-x"]: "-80px",
         ["--logo-offset-y"]: "-40px",
-
     } as React.CSSProperties;
 
     return (
-        <section className={styles.wrapper} aria-labelledby="our-story-title">
+        <section className={styles.wrapper} aria-labelledby="contact-title">
             {/* Background logo */}
             <img
                 src="/homepage/logo.png"
@@ -27,11 +26,11 @@ export default function ContactSection() {
             <OutlineBox>
                 <div className={styles.container} style={containerStyle}>
                     <div className={styles.left}>
-                        <h2 id="our-story-title" className={styles.title}>
+                        <h2 id="contact-title" className={styles.title}>
                             Connect
                         </h2>
 
-                        {/* Image is now STATIC */}
+                        {/* Image used for desktop (static) */}
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
@@ -102,6 +101,20 @@ export default function ContactSection() {
                                     <span>vrikshapresentationport/</span>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Mobile-only duplicate image (hidden on desktop) */}
+                    <div className={styles.imageOuterMobile}>
+                        <div className={styles.imageBox}>
+                            <Image
+                                src="/homepage/contact-image.png"
+                                alt="Vriksha studio office"
+                                fill
+                                sizes="(max-width: 768px) 100vw"
+                                style={{ objectFit: "cover" }}
+                                priority
+                            />
                         </div>
                     </div>
                 </div>

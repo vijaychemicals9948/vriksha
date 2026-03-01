@@ -50,6 +50,7 @@
 }
 
 /* The outer element that receives transforms (moves with global mouse) */
+/* This is the original, desktop-first imageOuter. We'll hide it on mobile. */
 .imageOuter {
     display: block;
     position: relative;
@@ -57,6 +58,11 @@
     overflow: visible; /* allow movement beyond bounds so image won't be clipped */
     will-change: transform;
     transition: transform 120ms linear; /* subtle crispness if JS stops */
+}
+
+/* Mobile-only duplicate (hidden on desktop). We'll show it in mobile and place after text */
+.imageOuterMobile {
+    display: none; /* hidden on desktop */
 }
 
 /* Visual image box containing next/image */
@@ -100,44 +106,99 @@
     padding-left: 50px;
     padding-right: 40px;
     text-align: justify;
-
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
     .container {
         flex-direction: column;
+        padding: 30px 5px;
+        gap : 0px;
     }
+
+    .left {
+        margin-left: 0;
+        margin-top: 0;
+        width: 100%;
+        text-align: left; /* 🔥 ye main fix hai */
+    }
+
+    .logo {
+        width: 85px; /* logo size control karta hai */
+        margin-left: 0; /* left align */
+        margin-bottom: 15px; /* logo aur title ke beech gap */
+        margin-top: 120px;
+        display: block;
+    }
+
+    .title {
+        margin-left: 0;
+        font-size: 32px;
+    }
+
+    /* On mobile: hide the desktop image and show the mobile duplicate AFTER the text */
+    .imageOuter {
+        display: none !important; /* hide desktop image on mobile */
+        transform: none !important;
+        margin-top: 20px;
+    }
+
+    .imageOuterMobile {
+        display: block;
+        order: 3;
+        width: 100%; /* 👈 thoda chhota */
+        max-width: 500px; /* optional limit */
+        margin-left: -25px; /* 👈 center kar dega */
+        margin-top: 20px;
+        padding-bottom: 60px;
+        overflow: visible;
+        will-change: auto;
+        
+        transition: none;
+    }
+
+
+        /* make mobile image a bit shorter */
+        .imageOuterMobile .imageBox {
+            height: 280px;
+        }
 
     .imageBox {
         height: 280px;
     }
 
-        /* disable the hover scale and pointer-driven transform on small screens */
-        .imageBox:hover :global(img) {
-            transform: scale(1);
-        }
+    .right {
+        padding: 20px;
+        padding-left: 0px;
+        margin-top: 0px;
+        font-size: 16px;
+        text-align: justify; /* justify mobile pe heavy lagta hai */
+    }
 
-    .imageOuter {
-        transform: none !important;
+    .imageBox:hover :global(img) {
+        transform: scale(1);
     }
 }
 
 @media (max-width: 600px) {
+    .wrapper {
+        padding: 50px 0px 0;
+    }
+
     .title {
-        font-size: 26px;
+        font-size: 32px;
     }
 
     .imageBox {
-        height: 240px;
+        height: 220px;
     }
-}
 
-.verticalBox {
-    position: absolute;
-    left: 50%; /* anchor to center of section */
-    transform: translateX(-600px); /* center se LEFT taraf le jao (value tune karein) */
-    bottom: -135px;
-    pointer-events: none;
-    z-index: 1;
+    .right {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    /* mobile duplicate height tweak */
+    .imageOuterMobile .imageBox {
+        height: 220px;
+    }
 }

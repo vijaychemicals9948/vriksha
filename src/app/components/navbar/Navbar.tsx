@@ -61,7 +61,7 @@ export default function Navbar() {
                 {/* LEFT: Logo now here */}
                 <div className={styles.logo}>
                     <Link href="/" aria-label="Go to homepage">
-                        <Image src="/logo-black.png" alt="Vriksha Logo" width={130} height={104} priority />
+                        <Image src="/vriksha-logo-final.webp" alt="Vriksha Logo" width={130} height={104} priority />
                     </Link>
                 </div>
 

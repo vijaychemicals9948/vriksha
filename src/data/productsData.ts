@@ -1,7 +1,32 @@
 //src/data/productsData.js
-export const PRODUCT_CATEGORIES = {
+export type Product = {
+    id: number;
+    title: string;
+    img: string;
+};
+
+export type SubCategory = {
+    slug: string;
+    title: string;        // ✅ add this
+    thumb: string;        // ✅ add this
+    banner: string;
+    mobileBanner?: string;
+    products: Product[];
+};
+
+export type Category = {
+    banner: string;
+    mobileBanner?: string;
+    products?: Product[];
+    subcategories?: SubCategory[];  // cleaner
+};
+
+
+export const PRODUCT_CATEGORIES: Record<string, Category> = {
+
     "brass-idols-on-silk": {
         banner: "/products/brass-idols-on-silk/brass-idols-on-silk-banner.webp",
+        mobileBanner: "/products/brass-idols-on-silk/brass-idols-on-silk-banner-mobile.webp",
         products: [
             {
                 id: 1,
@@ -87,7 +112,10 @@ export const PRODUCT_CATEGORIES = {
     },
 
     "brass-idols-on-gold-metal-art": {
-        banner: "/products/brass-idols-on-gold-metal-art/brass-idols-on-gold-metal.webp",
+        banner:         "/products/brass-idols-on-gold-metal-art/brass-idols-on-silk-banner1.webp",
+        mobileBanner:   "/products/brass-idols-on-gold-metal-art/2-brass-idols-on-gold-metal-mobile.webp",
+        
+
         products: [
             { id: 1, title: "Aiyappa on Gold (16x16)", img: "/products/brass-idols-on-gold-metal-art/product-images/aiyappa-on-gold-16x16-01.webp" },
             { id: 2, title: "Apsaras on Gold (16x16)", img: "/products/brass-idols-on-gold-metal-art/product-images/apsaras-on-gold-16x16.webp" },
@@ -113,6 +141,7 @@ export const PRODUCT_CATEGORIES = {
 
     "brass-on-solid-wood": {
         banner: "/products/brass-idols-on-solid-wood/brass-on-solid-wood.webp",
+        mobileBanner: "/products/brass-idols-on-solid-wood/3-brass-on-solid-wood-mobile.webp",
         products: [
             { id: 1, title: "Aandaal", img: "/products/brass-idols-on-solid-wood/product-images/aandaal.webp" },
             { id: 2, title: "Balaji on Lotus", img: "/products/brass-idols-on-solid-wood/product-images/balaji-on-lotuss.webp" },
@@ -137,6 +166,7 @@ export const PRODUCT_CATEGORIES = {
 
     "gold-metal-art": {
         banner: "/products/gold-metal-art/gold-metalart-banner.webp",
+        mobileBanner: "/products/gold-metal-art/4-gold-metalart-banner-mobile.webp",
         products: [
             { id: 1, title: "Apsara – Jaipur Palace", img: "/products/gold-metal-art/product-images/apsara-jaipur-palace.webp" },
             
@@ -171,6 +201,7 @@ export const PRODUCT_CATEGORIES = {
 
     "mementos": {
         banner: "/products/mementos/mementos.webp",
+        mobileBanner: "/products/mementos/mementos-mobile.webp",
         products: [
             { id: 1, title: "Memento 01", img: "/products/mementos/product-images/01.webp" },
             { id: 2, title: "Memento 02", img: "/products/mementos/product-images/02.webp" },
@@ -200,6 +231,7 @@ export const PRODUCT_CATEGORIES = {
 
     "pooja-room-series": {
         banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
+        mobileBanner: "/products/pooja-room-series/pooja-room-series-banner-mobile.webp",
         subcategories: [
 
             {
@@ -362,7 +394,7 @@ export const PRODUCT_CATEGORIES = {
                     { id: 10, title: "Namam", img: "/products/pooja-room-series/miniature-gods/namam.webp" },
                     { id: 11, title: "Nataraja", img: "/products/pooja-room-series/miniature-gods/nataraja.webp" },
                     { id: 12, title: "Raghavendra", img: "/products/pooja-room-series/miniature-gods/ragavendra.webp" },
-                    { id: 13, title: "Saibaba", img: "/products/pooja-room-series/miniature-gods/saibaba.webp" },
+                    { id: 13, title: "Saibaba", img: "/products/pooja-room-series/miniature-gods/saibaba1.webp" },
                     { id: 14, title: "Saraswati", img: "/products/pooja-room-series/miniature-gods/saraswati.webp" },
                     { id: 15, title: "Shank", img: "/products/pooja-room-series/miniature-gods/shank.webp" },
                     { id: 16, title: "Subramanya", img: "/products/pooja-room-series/miniature-gods/subramanya.webp" }
@@ -403,13 +435,14 @@ export const PRODUCT_CATEGORIES = {
     },
 
     "indian-art-on-prabhavali": {
-        banner: "/products/indian-art-on-prabhavali/indian-art-on-prabhavali-banner2.webp",
+        banner: "/products/indian-art-on-prabhavali/prabhavali-series-banner.webp",
+        mobileBanner: "/products/indian-art-on-prabhavali/5-indian-art-on-prabhavali-banner-mobile.webp",
         subcategories: [
 
             {
                 slug: "gods-on-prabhavali",
                 title: "Gods on Prabhavali",
-                thumb: "/products/indian-art-on-prabhavali/gods-on-prabhavali/aiyappan.webp",
+                thumb: "/products/indian-art-on-prabhavali/gods-on-prabhavali/gajalakshmi-01.webp",
                 banner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner.webp",
 
                 products: [
@@ -494,7 +527,7 @@ export const PRODUCT_CATEGORIES = {
                 slug: "indianart-on-prabhavali",
                 title: "Indian Art on Prabhavali",
                 thumb: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/01.webp",
-                banner: "/products/indian-art-on-prabhavali/indian-art-on-prabhavali-banner.webp",
+                banner: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/indian-art-on-prabhavali-banner.webp",
 
                 products: [
                     { id: 1, title: "Indian Art 1", img: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/01.webp" },
@@ -525,10 +558,47 @@ export const PRODUCT_CATEGORIES = {
                     { id: 26, title: "Indian Art 27", img: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/27.webp" },
                     { id: 27, title: "Indian Art 28", img: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/28.webp" }
                 ]
-
-
-
             },
+
+
+            {
+                slug: "indian-god-with-gold-on-prabhavali",
+                title: "Indian gods with gold on prabhavali",
+                thumb: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/alamelu.webp",
+                banner: "/products/indian-art-on-prabhavali//indian-god-with-gold-on-prabhavali/indian-god-on-gold-prabhavali-banner.webp",
+
+                products: [
+                    { id: 1, title: "Aandaal", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/aandaal.webp" },
+                    { id: 2, title: "Aiyappa", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/aiyappa.webp" },
+                    { id: 3, title: "Alamelu", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/alamelu.webp" },
+                    { id: 4, title: "Annalakshmi", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/annalakshmi.webp" },
+                    { id: 5, title: "Balaji", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/balaji.webp" },
+                    { id: 6, title: "Balambal", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/balambal.webp" },
+                    { id: 7, title: "Ganesha", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/ganesha.webp" },
+                    { id: 8, title: "Gowri Ganesha", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/gowri-ganesha.webp" },
+                    { id: 9, title: "Hanuman", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/hanuman.webp" },
+                    { id: 10, title: "Kamadenu", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/kamadenu.webp" },
+                    { id: 11, title: "Krishna", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/krishna.webp" },
+                    { id: 12, title: "Lalita", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/lalita.webp" },
+                    { id: 13, title: "Maa Durga", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/maa-durga.webp" },
+                    { id: 14, title: "Mahalakshmi", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/mahalakshmi.webp" },
+                    { id: 15, title: "Mahaperiava", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/mahaperiava.webp" },
+                    { id: 16, title: "Mookambika", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/mookambika.webp" },
+                    { id: 17, title: "Muruga with Consorts", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/murruawith-consorts.webp" },
+                    { id: 18, title: "Murugan", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/murugan.webp" },
+                    { id: 19, title: "Sainath", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/sainath.webp" },
+                    { id: 20, title: "Sarada", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/sarada.webp" },
+                    { id: 21, title: "Saraswati", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/saraswati.webp" },
+                    { id: 22, title: "Satyanarayana", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/satyanarayana.webp" },
+                    { id: 23, title: "Shyamala", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/shyamala.webp" },
+                    { id: 24, title: "Siva", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/siva.webp" },
+                    { id: 25, title: "Sivaparivar", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/sivaparivar.webp" },
+                    { id: 26, title: "Srinath", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/srinath.webp" },
+                    { id: 27, title: "Varahi", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/varahi.webp" },
+                    { id: 28, title: "Venkat Lakshmi", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/venkat-lakshmi.webp" }
+                ]
+            },
+
 
 
            
@@ -536,7 +606,8 @@ export const PRODUCT_CATEGORIES = {
     },
     
     "serving-trays": {
-        banner: "/products/serving-trays/serving-trays-banner.webp",
+        banner: "/products/serving-trays/serving-trays-banner1.webp",
+        mobileBanner: "/products/serving-trays/serving-trays-banner-mobile.webp", 
         products: [
             { id: 1, title: "Serving Tray 01", img: "/products/serving-trays/product-images/01.webp" },
             { id: 2, title: "Serving Tray 02", img: "/products/serving-trays/product-images/02.webp" },

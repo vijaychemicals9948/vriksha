@@ -32,10 +32,6 @@ const PRODUCT_LIST: ProductCategory[] = [
         href: "/products/gold-metal-art",
     },
     {
-        title: "Serving trays with gold metal art",
-        href: "/products/serving-trays",
-    },
-    {
         title: "Pooja room series",
         href: "/products/pooja-room-series",
         children: [
@@ -83,9 +79,13 @@ const PRODUCT_LIST: ProductCategory[] = [
             },
             {
                 title: "Indian gods with gold on prabhavali",
-                href: "/products/indian-art-on-prabhavali/gods-on-prabhavali",
+                href: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali",
             },
         ],
+    },
+    {
+        title: "Serving trays with gold metal art",
+        href: "/products/serving-trays",
     },
     {
         title: "Exquisite custom made mementos",

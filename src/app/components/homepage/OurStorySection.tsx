@@ -5,8 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./OurStorySection.module.css";
 import OutlineBox from "./OutlineBox";
-import OutlineBoxVertical from "./OutlineBoxVertical";
-
+// import OutlineBoxVertical from "./OutlineBoxVertical"; // kept commented like original
 
 export default function OurStorySection() {
     const wrapperRef = useRef<HTMLDivElement | null>(null); // the element we will transform
@@ -103,7 +102,7 @@ export default function OurStorySection() {
                             Our story
                         </h2>
 
-                        {/* transform applied to this outer wrapper (moves with global mouse) */}
+                        {/* --- ORIGINAL imageOuter (used for desktop & parallax) --- */}
                         <div className={styles.imageOuter} ref={wrapperRef}>
                             <div className={styles.imageBox}>
                                 <Image
@@ -148,11 +147,22 @@ export default function OurStorySection() {
                             creativity, collaboration, and meaningful craftsmanship.
                         </p>
                     </div>
+
+                    {/* --- DUPLICATE image used ONLY on mobile (hidden on desktop) --- */}
+                    <div className={styles.imageOuterMobile}>
+                        <div className={styles.imageBox}>
+                            <Image
+                                src="/homepage/office1.png"
+                                alt="Vriksha studio office"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                style={{ objectFit: "cover" }}
+                                priority
+                            />
+                        </div>
+                    </div>
                 </div>
             </OutlineBox>
-            
         </section>
-        
     );
 }
-/*<OutlineBoxVertical className={styles.verticalBox} /> */
