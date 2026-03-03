@@ -1,4 +1,5 @@
-﻿"use client";
+﻿//src/app/components/navbar/Navbar.tsx
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";

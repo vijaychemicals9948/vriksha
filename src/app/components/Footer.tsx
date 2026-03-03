@@ -17,9 +17,7 @@ export default function Footer() {
                     className={styles.footerLogo}
                 />
 
-                <p className={styles.tagline}>
-                    Rooted in Nature, Designed for Tomorrow
-                </p>
+               
 
                 <div className={styles.social}>
                     <a

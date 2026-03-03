@@ -249,3 +249,10 @@
 }
 
 
+
+/* Mobile me sirf products page par outline hide karo */
+@media (max-width: 768px) {
+    .productsPage :global(svg) {
+        display: none !important;
+    }
+}

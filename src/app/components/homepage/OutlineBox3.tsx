@@ -4,7 +4,7 @@ import styles from "./OutlineBox3.module.css";
 
 type Props = {
     children: React.ReactNode;
-    topGap?: number; // kept for backward compat if you ever want it (not used when top is continuous)
+    topGap?: number;
     bottomGap?: number;
     bottomGapRatio?: number;
     leftTopLength?: number;
@@ -22,8 +22,7 @@ export default function OutlineBox3({
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);
 
-    // SVG path refs
-    const topRef = useRef<SVGPathElement | null>(null);           // single continuous top
+    const topRef = useRef<SVGPathElement | null>(null);
     const rightRef = useRef<SVGPathElement | null>(null);
     const bottomLeftRef = useRef<SVGPathElement | null>(null);
     const bottomRightRef = useRef<SVGPathElement | null>(null);
@@ -93,14 +92,6 @@ export default function OutlineBox3({
             const newLeftBottom = leftBottom ? leftBottom.getTotalLength() : 0;
 
             const prev = lengthsRef.current;
-            const changed =
-                newTop !== prev.top ||
-                newRight !== prev.right ||
-                newBottomLeft !== prev.bottomLeft ||
-                newBottomRight !== prev.bottomRight ||
-                newLeftTop !== prev.leftTop ||
-                newLeftBottom !== prev.leftBottom ||
-                sizeChanged;
 
             lengthsRef.current.top = newTop;
             lengthsRef.current.right = newRight;
@@ -215,17 +206,29 @@ export default function OutlineBox3({
 
     const { w, h } = svgSize;
 
-    const padX = 30;
-    let padY = 70;
+    // --- Responsive padX/padY: MATCH OutlineBox behaviour on small screens ---
+    const padX = (() => {
+        if (!w) return 30;
+        if (w <= 420) return 12; // small phones — snug
+        if (w <= 760) return 18;
+        return 30;
+    })();
 
-    if (h > 0) padY = Math.min(padY, Math.floor(h / 3));
+    const padY = (() => {
+        if (!w) return 70;
+        if (w <= 420) return 28; // reduce vertical inset on tiny screens (match OutlineBox)
+        if (w <= 760) return 50;
+        return 70;
+    })();
 
-    const resolvedBottomGap = typeof bottomGap === "number" ? bottomGap : Math.round(topGap * bottomGapRatio);
+    // --- Resolve bottom gap: remove on small phones so bottom is continuous like OutlineBox ---
+    let resolvedBottomGap = typeof bottomGap === "number" ? bottomGap : Math.round(topGap * bottomGapRatio);
+    if (w && w <= 420) resolvedBottomGap = 0;
 
-    // top is single continuous line now
+    // top is single continuous line
     const topPath = w ? `M ${padX} ${padY} H ${w - padX}` : "";
 
-    // bottom segments (still split into two)
+    // bottom segments (still split into two unless gap==0)
     const half = w ? Math.round(w / 2) : 0;
     const gapHalfBottom = Math.round(resolvedBottomGap / 2);
     const bottomLeftEndX = Math.max(padX, half - gapHalfBottom);
@@ -236,7 +239,10 @@ export default function OutlineBox3({
     // right side - continuous vertical line
     const rightPath = w ? `M ${w - padX} ${padY} V ${h - padY}` : "";
 
-    // left (top/bottom split behavior preserved)
+    // left behavior: on small phones cap to OutlineBox's short segments
+    const topLenParam = w && w <= 420 ? 90 : leftTopLength;
+    const bottomLenParam = w && w <= 420 ? 120 : leftBottomLength;
+
     let leftTopPath = "";
     let leftBottomPath = "";
     let leftContinuousPath = "";
@@ -244,12 +250,12 @@ export default function OutlineBox3({
     if (!w) {
         leftTopPath = leftBottomPath = leftContinuousPath = "";
     } else {
-        if (leftTopLength <= 0 && leftBottomLength <= 0) {
+        if (topLenParam <= 0 && bottomLenParam <= 0) {
             leftContinuousPath = `M ${padX} ${h - padY} V ${padY}`;
         } else {
             const maxVisible = Math.max(0, h - 2 * padY);
-            const topLen = Math.min(leftTopLength, maxVisible);
-            const bottomLen = Math.min(leftBottomLength, maxVisible);
+            const topLen = Math.min(topLenParam, maxVisible);
+            const bottomLen = Math.min(bottomLenParam, maxVisible);
 
             if (topLen > 0) leftTopPath = `M ${padX} ${padY} V ${Math.min(padY + topLen, h - padY)}`;
             if (bottomLen > 0) leftBottomPath = `M ${padX} ${h - padY - bottomLen} V ${h - padY}`;
@@ -268,17 +274,11 @@ export default function OutlineBox3({
                         preserveAspectRatio="none"
                         aria-hidden
                     >
-                        {/* single continuous top */}
                         <path ref={topRef} d={topPath} className={styles.outlinePath} />
-
-                        {/* right */}
                         <path ref={rightRef} d={rightPath} className={styles.outlinePath} />
-
-                        {/* bottom split */}
                         <path ref={bottomLeftRef} d={bottomLeftPath} className={styles.outlinePath} />
                         <path ref={bottomRightRef} d={bottomRightPath} className={styles.outlinePath} />
 
-                        {/* left: continuous or two segments */}
                         {leftContinuousPath ? (
                             <path d={leftContinuousPath} ref={leftTopRef} className={styles.outlinePath} />
                         ) : (

@@ -5,9 +5,10 @@ import styles from "./OutlineBox2.module.css";
 type Props = {
     children: React.ReactNode;
     delay?: number; // animation delay (ms)
+    hideOutline?: boolean;
 };
 
-export default function OutlineBox({ children, delay = 0 }: Props) {
+export default function OutlineBox({ children, delay = 0, hideOutline = false }: Props) {
 
     const wrapperRef = useRef<HTMLDivElement | null>(null);
     const boxRef = useRef<HTMLDivElement | null>(null);
@@ -292,7 +293,7 @@ export default function OutlineBox({ children, delay = 0 }: Props) {
                 {/* SVG overlay positioned absolutely to match the box size */}
                 {w > 0 && h > 0 && (
                     <svg
-                        className={styles.outlineSvg}
+                        className={`${styles.outlineSvg} ${hideOutline ? styles.hiddenSvg : ""}`}
                         width={w}
                         height={h}
                         viewBox={`0 0 ${w} ${h}`}

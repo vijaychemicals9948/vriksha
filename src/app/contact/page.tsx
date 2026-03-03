@@ -1,5 +1,4 @@
-// src/app/contact/page.tsx
-
+﻿// src/app/contact/page.tsx
 
 "use client";
 
@@ -9,7 +8,6 @@ import styles from "./ContactSection.module.css";
 import OutlineBoxContact from "./OutlineBoxContact";
 
 export default function ContactPage() {
-    // OPTIONAL: keep offsets for BG logo
     const containerStyle = {
         ["--logo-offset-x"]: "-80px",
         ["--logo-offset-y"]: "-40px",
@@ -32,7 +30,7 @@ export default function ContactPage() {
                             Connect
                         </h2>
 
-                        {/* Image is STATIC */}
+                        {/* Desktop Image */}
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
@@ -86,7 +84,6 @@ export default function ContactPage() {
 
                             <div className={styles.space} />
 
-                            {/* Social links */}
                             <div className={styles.socialLinks}>
                                 <a
                                     href="https://www.facebook.com/VrikshaAPresentationPort/"
@@ -108,6 +105,20 @@ export default function ContactPage() {
                                     <span>vrikshapresentationport/</span>
                                 </a>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* ✅ Mobile-only duplicate image */}
+                    <div className={styles.imageOuterMobile}>
+                        <div className={styles.imageBox}>
+                            <Image
+                                src="/homepage/contact-image.png"
+                                alt="Vriksha studio office"
+                                fill
+                                sizes="(max-width: 768px) 100vw"
+                                style={{ objectFit: "cover" }}
+                                priority
+                            />
                         </div>
                     </div>
                 </div>

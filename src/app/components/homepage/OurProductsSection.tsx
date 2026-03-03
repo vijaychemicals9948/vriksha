@@ -99,10 +99,13 @@ const PRODUCT_LIST: ProductCategory[] = [
     },
 ];
 
-export default function OurProductsSection() {
+
+type Props = { hideOutline?: boolean };
+
+export default function OurProductsSection({ hideOutline = false }: Props) {
     return (
         <section className={styles.wrapper} aria-labelledby="our-products-title">
-            <OutlineBox delay={600}>
+            <OutlineBox delay={600} hideOutline={hideOutline}>
                 <div className={styles.container}>
                     {/* LEFT */}
                     <div className={styles.left}>

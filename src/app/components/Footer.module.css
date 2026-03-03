@@ -76,4 +76,9 @@
     .tagline {
         font-size: 14px;
     }
+
+    .footerLogo {
+        width: 100px;
+        height: auto;
+    }
 }

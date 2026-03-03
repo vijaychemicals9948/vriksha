@@ -186,7 +186,17 @@
 
     .title {
         font-size: 32px;
+        margin-bottom: 0px;
     }
+
+    .logo {
+        width: 85px; /* logo size control karta hai */
+        margin-left: 0; /* left align */
+        margin-bottom: 0px; /* logo aur title ke beech gap */
+        margin-top: 80px;
+        display: block;
+    }
+
 
     .imageBox {
         height: 220px;

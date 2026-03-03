@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     padding-top: 0px;
-    
 }
 
 .outlineBox {
@@ -42,9 +41,9 @@
     pointer-events: auto;
     margin-top: 118px;
     margin-bottom: -100px;
-    
 }
 
+/* Tablet / smaller desktop */
 @media (max-width: 900px) {
     .outlineBox {
         padding: 40px 20px;
@@ -52,16 +51,34 @@
     }
 }
 
+/* MOBILE - make it match OutlineBox mobile look exactly */
 @media (max-width: 600px) {
 
     .outlineWrapper {
-        padding-left: 3px;
-        padding-right: 3px;
+        /* match OutlineBox mobile wrapper spacing */
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .outlineBox {
+        /* same tight padding as OutlineBox on very small screens */
         width: 100%;
-        padding: 24px 12px;
+        padding: 12px 8px;
+        max-width: none;
+    }
+
+    /* ensure svg overlay covers the box fully on very small screens */
+    .outlineSvg {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* make content sit normally (OutlineBox content has no large top margin) */
+    .content {
+        margin-top: 100px;
+        margin-bottom: 0;
     }
 }
-

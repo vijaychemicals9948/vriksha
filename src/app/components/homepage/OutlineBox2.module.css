@@ -48,33 +48,34 @@
 /* responsive tweaks */
 @media (max-width: 900px) {
     .outlineBox {
-        /* mobile: remove the desktop inset so outline hugs the edges */
         width: 100%;
-        max-width: none; /* allow full width */
-        padding: 40px 12px; /* smaller horizontal padding so content isn't cramped */
+        max-width: none;
+        padding: 40px 12px;
         box-sizing: border-box;
     }
-    /* smaller left short segments on small screens could be handled by JS recompute,
-       but keep svg visible */
 }
 
 @media (max-width: 600px) {
-    .outlineBox {
-        padding: 28px 16px;
-        width: 100%;
-        max-width: none;
-    }
-
     .outlineWrapper {
+        padding-top: 0px;
         padding-left: 0px;
         padding-right: 0px;
     }
 
-    /* make sure svg overlay covers the box fully on very small screens */
+    .outlineBox {
+        width: 100%;
+        max-width: none;
+        padding: 12px 8px; /* File 1 wali tight padding */
+    }
+
     .outlineSvg {
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
     }
+}
+
+.hiddenSvg {
+    display: none;
 }

@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 110px 20px;
+    /*padding: 110px 20px;*/
     padding-top: 40px;
     box-sizing: border-box;
     margin-top: 20px;
@@ -150,7 +150,7 @@
 
     /* smaller title on mobile */
     .title {
-        margin-left: -20px;
+        margin-left: 0px;
         font-size: 32px;
         /* <-- ADDED: push the "Connect" heading down slightly on mobile, keep left-aligned */
         margin-top: 82px;
@@ -224,6 +224,13 @@
         font-size: 15px !important;
         line-height: 1.6 !important;
     }
+
+    .wrapper {
+        padding-top: 0px;
+        
+    }
+
+
 }
 
 /* smaller helper classes */
