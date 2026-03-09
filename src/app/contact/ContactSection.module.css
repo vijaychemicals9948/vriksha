@@ -309,3 +309,22 @@
     color: #333 !important;
     line-height: 1.7;
 }
+
+
+
+
+
+.getInTouch {
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: 2px solid #6b7c4a;
+    background: transparent;
+    cursor: pointer;
+    font-size: 15px;
+
+}
+
+    .getInTouch:hover {
+        background: #6b7c4a;
+        color: white;
+    }

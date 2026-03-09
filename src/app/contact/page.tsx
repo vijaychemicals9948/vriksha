@@ -6,12 +6,16 @@ import React from "react";
 import Image from "next/image";
 import styles from "./ContactSection.module.css";
 import OutlineBoxContact from "./OutlineBoxContact";
+import ContactFormModal from "./ContactFormModal";
+import { useState } from "react";
 
 export default function ContactPage() {
     const containerStyle = {
         ["--logo-offset-x"]: "-80px",
         ["--logo-offset-y"]: "-40px",
     } as React.CSSProperties;
+
+    const [open, setOpen] = useState(false);
 
     return (
         <section className={styles.wrapper} aria-labelledby="our-story-title">
@@ -105,6 +109,16 @@ export default function ContactPage() {
                                     <span>vrikshapresentationport/</span>
                                 </a>
                             </div>
+
+                            <div className={styles.space} />
+
+                            <button
+                                className={styles.getInTouch}
+                                onClick={() => setOpen(true)}
+                            >
+                                Get in Touch
+                            </button>
+
                         </div>
                     </div>
 
@@ -123,6 +137,10 @@ export default function ContactPage() {
                     </div>
                 </div>
             </OutlineBoxContact>
+            <ContactFormModal
+                isOpen={open}
+                onClose={() => setOpen(false)}
+            />
         </section>
     );
 }

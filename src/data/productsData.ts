@@ -26,7 +26,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "brass-idols-on-silk": {
         banner: "/products/brass-idols-on-silk/brass-idols-on-silk-banner.webp",
-        mobileBanner: "/products/brass-idols-on-silk/brass-idols-on-silk-banner-mobile.webp",
+        mobileBanner: "/products/brass-idols-on-silk/brass-idols-on-silk-banner-mobile1.webp",
         products: [
             {
                 id: 1,
@@ -113,7 +113,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "brass-idols-on-gold-metal-art": {
         banner:         "/products/brass-idols-on-gold-metal-art/brass-idols-on-silk-banner1.webp",
-        mobileBanner:   "/products/brass-idols-on-gold-metal-art/2-brass-idols-on-gold-metal-mobile.webp",
+        mobileBanner:   "/products/brass-idols-on-gold-metal-art/2-brass-idols-on-gold-metal-mobile1.webp",
         
 
         products: [
@@ -141,7 +141,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "brass-on-solid-wood": {
         banner: "/products/brass-idols-on-solid-wood/brass-on-solid-wood.webp",
-        mobileBanner: "/products/brass-idols-on-solid-wood/3-brass-on-solid-wood-mobile.webp",
+        mobileBanner: "/products/brass-idols-on-solid-wood/3-brass-on-solid-wood-mobile1.webp",
         products: [
             { id: 1, title: "Aandaal", img: "/products/brass-idols-on-solid-wood/product-images/aandaal.webp" },
             { id: 2, title: "Balaji on Lotus", img: "/products/brass-idols-on-solid-wood/product-images/balaji-on-lotuss.webp" },
@@ -166,7 +166,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "gold-metal-art": {
         banner: "/products/gold-metal-art/gold-metalart-banner.webp",
-        mobileBanner: "/products/gold-metal-art/4-gold-metalart-banner-mobile.webp",
+        mobileBanner: "/products/gold-metal-art/4-gold-metalart-banner-mobile1.webp",
         products: [
             { id: 1, title: "Apsara – Jaipur Palace", img: "/products/gold-metal-art/product-images/apsara-jaipur-palace.webp" },
             
@@ -201,7 +201,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "mementos": {
         banner: "/products/mementos/mementos.webp",
-        mobileBanner: "/products/mementos/mementos-mobile.webp",
+        mobileBanner: "/products/mementos/mementos-mobile1.webp",
         products: [
             { id: 1, title: "Memento 01", img: "/products/mementos/product-images/01.webp" },
             { id: 2, title: "Memento 02", img: "/products/mementos/product-images/02.webp" },
@@ -231,7 +231,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "pooja-room-series": {
         banner: "/products/pooja-room-series/pooja-room-series-banner.webp",
-        mobileBanner: "/products/pooja-room-series/pooja-room-series-banner-mobile.webp",
+        mobileBanner: "/products/pooja-room-series/pooja-room-series-banner-mobile1.webp",
         subcategories: [
 
             {
@@ -239,7 +239,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Arupadai Veedu",
                 thumb: "/products/pooja-room-series/arupadai-veedu/thumb.webp",
                 banner: "/products/pooja-room-series/arupadai-veedu/arupadai-veedu-banner.webp",
-                mobileBanner: "/products/pooja-room-series/arupadai-veedu/arupadai-veedu-banner-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/arupadai-veedu/arupadai-veedu-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Pazhamudhir Cholai", img: "/products/pooja-room-series/arupadai-veedu/pazhamudhir.webp" },
@@ -259,7 +259,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Ashtalakshmi Series",
                 thumb: "/products/pooja-room-series/ashtalakshmi-series/santhanalakshmi.webp",
                 banner: "/products/pooja-room-series/ashtalakshmi-series/ashtalakshmi-series-banner.webp",
-                mobileBanner: "/products/pooja-room-series/ashtalakshmi-series/ashtalakshmi-series-banner-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/ashtalakshmi-series/ashtalakshmi-series-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Aadhi Lakshmi", img: "/products/pooja-room-series/ashtalakshmi-series/aadhilakshmi.webp" },
@@ -280,7 +280,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Dasavatar Series",
                 thumb: "/products/pooja-room-series/dasavatar/matsya.webp",
                 banner: "/products/pooja-room-series/dasavatar/dasavatar-series-banner.webp",
-                mobileBanner: "/products/pooja-room-series/dasavatar/dasavatar-series-banner-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/dasavatar/dasavatar-series-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Matsya Avatar", img: "/products/pooja-room-series/dasavatar/matsya.webp" },
@@ -302,7 +302,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Gods on Gold Metal",
                 thumb: "/products/pooja-room-series/gods-on-gold-metal/alamelu-face.webp",
                 banner: "/products/pooja-room-series/gods-on-gold-metal/gods-on-gold-metal-banner.webp",
-                mobileBanner: "/products/pooja-room-series/gods-on-gold-metal/gods-on-gold-metal-banner-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/gods-on-gold-metal/gods-on-gold-metal-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Aandaal", img: "/products/pooja-room-series/gods-on-gold-metal/aandaal.webp" },
@@ -355,7 +355,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Gods on Solid Wood",
                 thumb: "/products/pooja-room-series/gods-on-solid-wood/siva-parvati.webp",
                 banner: "/products/pooja-room-series/gods-on-solid-wood/gods-on-wood-banner.webp",
-                mobileBanner: "/products/pooja-room-series/gods-on-solid-wood/gods-on-wood-banner-mobile1.webp",
+                mobileBanner: "/products/pooja-room-series/gods-on-solid-wood/gods-on-wood-banner-mobile2.webp",
 
                 products: [
                     { id: 1, title: "Aandaal", img: "/products/pooja-room-series/gods-on-solid-wood/aandaal.webp" },
@@ -385,7 +385,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Miniature Gods",
                 thumb: "/products/pooja-room-series/miniature-gods/balaji.webp",
                 banner: "/products/pooja-room-series/miniature-gods/miniature-gods-series.webp",
-                mobileBanner: "/products/pooja-room-series/miniature-gods/miniature-gods-on-series-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/miniature-gods/miniature-gods-on-series-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Balaji", img: "/products/pooja-room-series/miniature-gods/balaji.webp" },
@@ -414,7 +414,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Various Gods Series",
                 thumb: "/products/pooja-room-series/various-gods-series/01-ganesha-face.webp",
                 banner: "/products/pooja-room-series/various-gods-series/various-gods-series-banner.webp",
-                mobileBanner: "/products/pooja-room-series/various-gods-series/various-gods-series-banner-mobile.webp",
+                mobileBanner: "/products/pooja-room-series/various-gods-series/various-gods-series-banner-mobile1.webp",
                 products: [
                     { id: 1, title: "Ganesha Face", img: "/products/pooja-room-series/various-gods-series/01-ganesha-face.webp" },
                     { id: 2, title: "Ganesha with Bell", img: "/products/pooja-room-series/various-gods-series/02-ganesha-with-bell.webp" },
@@ -442,7 +442,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
 
     "indian-art-on-prabhavali": {
         banner: "/products/indian-art-on-prabhavali/prabhavali-series-banner.webp",
-        mobileBanner: "/products/indian-art-on-prabhavali/5-indian-art-on-prabhavali-banner-mobile.webp",
+        mobileBanner: "/products/indian-art-on-prabhavali/5-indian-art-on-prabhavali-banner-mobile1.webp",
         subcategories: [
 
             {
@@ -450,7 +450,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Gods on Prabhavali",
                 thumb: "/products/indian-art-on-prabhavali/gods-on-prabhavali/gajalakshmi-01.webp",
                 banner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner.webp",
-                mobileBanner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner-mobile.webp",
+                mobileBanner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Aiyappan", img: "/products/indian-art-on-prabhavali/gods-on-prabhavali/aiyappan.webp" },
@@ -535,7 +535,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Indian Art on Prabhavali",
                 thumb: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/01.webp",
                 banner: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/indian-art-on-prabhavali-banner.webp",
-                mobileBanner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner-mobile.webp",
+                mobileBanner: "/products/indian-art-on-prabhavali/gods-on-prabhavali/indian-god-on-prabhavali-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Indian Art 1", img: "/products/indian-art-on-prabhavali/indianart-on-prabhavali/01.webp" },
@@ -574,7 +574,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
                 title: "Indian gods with gold on prabhavali",
                 thumb: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/alamelu.webp",
                 banner: "/products/indian-art-on-prabhavali//indian-god-with-gold-on-prabhavali/indian-god-on-gold-prabhavali-banner.webp",
-                mobileBanner: "/products/indian-art-on-prabhavali//indian-god-with-gold-on-prabhavali/indian-god-on-gold-prabhavali-banner-mobile.webp",
+                mobileBanner: "/products/indian-art-on-prabhavali//indian-god-with-gold-on-prabhavali/indian-god-on-gold-prabhavali-banner-mobile1.webp",
 
                 products: [
                     { id: 1, title: "Aandaal", img: "/products/indian-art-on-prabhavali/indian-god-with-gold-on-prabhavali/aandaal.webp" },
@@ -616,7 +616,7 @@ export const PRODUCT_CATEGORIES: Record<string, Category> = {
     
     "serving-trays": {
         banner: "/products/serving-trays/serving-trays-banner1.webp",
-        mobileBanner: "/products/serving-trays/serving-trays-banner-mobile.webp", 
+        mobileBanner: "/products/serving-trays/serving-trays-banner-mobile1.webp", 
         products: [
             { id: 1, title: "Serving Tray 01", img: "/products/serving-trays/product-images/01.webp" },
             { id: 2, title: "Serving Tray 02", img: "/products/serving-trays/product-images/02.webp" },
