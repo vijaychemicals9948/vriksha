@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
         // EMAIL TO ADMIN
         await resend.emails.send({
-            from: "Vriksha Website <onboarding@resend.dev>",
+            from: "Vriksha Website <contact@vriksha.co.in>",
             to: process.env.CONTACT_EMAIL!,
             subject: "New Inquiry from Vriksha Website",
             html: `
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
         // EMAIL TO CUSTOMER
         await resend.emails.send({
-            from: "Vriksha Decor Studio <onboarding@resend.dev>",
+            from: "Vriksha Decor Studio <hello@vriksha.co.in>",
             to: email,
             subject: "Thank you for contacting Vriksha",
             html: `
