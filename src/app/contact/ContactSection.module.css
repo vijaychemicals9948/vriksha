@@ -273,12 +273,12 @@
 
 .socialLinks {
     display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+    width: 100%;
 }
-
     .socialLinks a {
         display: flex;
         flex-direction: column;
@@ -328,3 +328,53 @@
         background: #6b7c4a;
         color: white;
     }
+
+
+.socialLinks {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.socialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #503f33;
+    border-radius: 50%;
+    color: #503f33;
+    background: white;
+    /* premium feel */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+    /* subtle lift effect */
+    .socialIcon:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+
+/* Facebook */
+.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    color: white;
+}
+
+/* Instagram */
+.instagram:hover {
+    background: #e4405f;
+    border-color: #e4405f;
+    color: white;
+}
+
+/* Google */
+.google:hover {
+    background: #db4437;
+    border-color: #db4437;
+    color: white;
+}

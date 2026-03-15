@@ -297,3 +297,28 @@
         font-size: 0.95rem;
     }
 }
+
+
+
+/* Facebook */
+.facebook:hover {
+    color: #1877f2;
+}
+
+/* Instagram */
+.instagram:hover {
+    color: #e4405f;
+}
+
+/* Google */
+.google:hover {
+    color: #db4437;
+}
+
+.socialIcons a {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+    .socialIcons a:hover {
+        transform: translateY(-3px);
+    }

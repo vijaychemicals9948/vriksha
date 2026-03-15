@@ -5,7 +5,8 @@ import { createPortal } from "react-dom";
 import styles from "./Hamburger.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
+import { FaGoogle } from "react-icons/fa";
 
 type Props = {
     open: boolean;
@@ -110,46 +111,48 @@ export default function Hamburger({ open, setOpen }: Props) {
 
                     <div className={styles.mobileFooter}>
                         <div className={styles.socialIcons} aria-label="Social links">
+
                             <a
-                                href="https://facebook.com"
+                                href="https://www.facebook.com/VrikshaAPresentationPort/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Facebook"
                                 title="Facebook"
+                                className={styles.facebook}
+
                             >
+
                                 <Facebook size={18} />
                             </a>
 
                             <a
-                                href="https://twitter.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Twitter"
-                                title="Twitter"
-                            >
-                                <Twitter size={18} />
-                            </a>
-
-                            <a
-                                href="https://instagram.com"
+                                href="https://www.instagram.com/vrikshapresentationport/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
                                 title="Instagram"
+                                className={styles.instagram}
+
                             >
+
                                 <Instagram size={18} />
                             </a>
 
                             <a
-                                href="https://linkedin.com"
+                                href="https://share.google/kbWV3gm5zbcfwQT9h"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                title="LinkedIn"
+                                aria-label="Google"
+                                title="Google"
+                                className={styles.google}
+
                             >
-                                <Linkedin size={18} />
+
+                                <FaGoogle size={18} />
                             </a>
+
                         </div>
+
 
                         <form className={styles.searchBar} role="search" onSubmit={onSearch}>
                             <label htmlFor="mobile-search" className={styles.visuallyHidden}>

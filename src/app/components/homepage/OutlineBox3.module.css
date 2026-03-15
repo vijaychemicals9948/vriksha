@@ -78,7 +78,7 @@
 
     /* make content sit normally (OutlineBox content has no large top margin) */
     .content {
-        margin-top: 100px;
+        margin-top: 135px;
         margin-bottom: 0;
     }
 }

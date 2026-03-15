@@ -82,3 +82,22 @@
         height: auto;
     }
 }
+
+
+/* Facebook hover */
+.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+/* Instagram hover */
+.instagram:hover {
+    background: #e4405f;
+    color: white;
+}
+
+/* Google hover */
+.google:hover {
+    background: #db4437;
+    color: white;
+}

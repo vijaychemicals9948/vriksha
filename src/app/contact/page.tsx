@@ -8,6 +8,7 @@ import styles from "./ContactSection.module.css";
 import OutlineBoxContact from "./OutlineBoxContact";
 import ContactFormModal from "./ContactFormModal";
 import { useState } from "react";
+import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 
 export default function ContactPage() {
     const containerStyle = {
@@ -89,25 +90,34 @@ export default function ContactPage() {
                             <div className={styles.space} />
 
                             <div className={styles.socialLinks}>
+
                                 <a
                                     href="https://www.facebook.com/VrikshaAPresentationPort/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.socialLink}
+                                    className={`${styles.socialIcon} ${styles.facebook}`}
                                 >
-                                    <span>https://www.facebook.com/</span>
-                                    <span>VrikshaAPresentationPort/</span>
+                                    <FaFacebookF size={18} />
                                 </a>
 
                                 <a
                                     href="https://www.instagram.com/vrikshapresentationport/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.socialLink}
+                                    className={`${styles.socialIcon} ${styles.instagram}`}
                                 >
-                                    <span>https://www.instagram.com/</span>
-                                    <span>vrikshapresentationport/</span>
+                                    <FaInstagram size={18} />
                                 </a>
+
+                                <a
+                                    href="https://share.google/kbWV3gm5zbcfwQT9h"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${styles.socialIcon} ${styles.google}`}
+                                >
+                                    <FaGoogle size={18} />
+                                </a>
+
                             </div>
 
                             <div className={styles.space} />

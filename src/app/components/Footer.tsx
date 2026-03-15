@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./Footer.module.css";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaGoogle } from "react-icons/fa";
 
 export default function Footer() {
     return (
@@ -23,7 +23,7 @@ export default function Footer() {
                     <a
                         href="https://www.facebook.com/VrikshaAPresentationPort"
                         aria-label="Facebook"
-                        className={styles.socialIcon}
+                        className={`${styles.socialIcon} ${styles.facebook}`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -33,7 +33,7 @@ export default function Footer() {
                     <a
                         href="https://www.instagram.com/vrikshapresentationport"
                         aria-label="Instagram"
-                        className={styles.socialIcon}
+                        className={`${styles.socialIcon} ${styles.instagram}`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -41,13 +41,13 @@ export default function Footer() {
                     </a>
 
                     <a
-                        href="#"
-                        aria-label="YouTube"
-                        className={styles.socialIcon}
+                        href="https://share.google/kbWV3gm5zbcfwQT9h"
+                        aria-label="Google"
+                        className={`${styles.socialIcon} ${styles.google}`}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaYoutube />
+                        <FaGoogle />
                     </a>
                 </div>
 
