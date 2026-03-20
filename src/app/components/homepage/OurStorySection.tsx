@@ -91,7 +91,7 @@ export default function OurStorySection() {
                 <div className={styles.container}>
                     <div className={styles.left}>
                         <Image
-                            src="/homepage/logo2.png"
+                            src="/homepage/logo2.webp"
                             alt="Vriksha Logo"
                             width={120}
                             height={120}
@@ -106,7 +106,7 @@ export default function OurStorySection() {
                         <div className={styles.imageOuter} ref={wrapperRef}>
                             <div className={styles.imageBox}>
                                 <Image
-                                    src="/homepage/office1.png"
+                                    src="/homepage/office1.webp"
                                     alt="Vriksha studio office"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -152,7 +152,7 @@ export default function OurStorySection() {
                     <div className={styles.imageOuterMobile}>
                         <div className={styles.imageBox}>
                             <Image
-                                src="/homepage/office1.png"
+                                src="/homepage/office1.webp"
                                 alt="Vriksha studio office"
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"

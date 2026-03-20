@@ -1,13 +1,13 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import styles from "./HeroSection.module.css";
 
 /* Desktop banners */
 const desktopImages = [
-    "/homepage/final1.png",
-    "/homepage/final2.png",
-    "/homepage/final4.png",
+    "/homepage/final1.webp",
+    "/homepage/final2.webp",
+    "/homepage/final4.webp",
     "/homepage/hero7.webp",
     "/homepage/hero8.webp",
 ];
@@ -20,7 +20,6 @@ const mobileImages = [
     "/homepage/mobile/mementos.webp",
     "/homepage/mobile/gold-metal-brass.webp",
 ];
-
 
 export default function HeroSection() {
     const [index, setIndex] = useState(0);
@@ -40,22 +39,34 @@ export default function HeroSection() {
         return () => window.removeEventListener("resize", checkDevice);
     }, []);
 
-    /* slider only for desktop (mobile me ek hi image hai) */
+    /* slider logic (fixed interval + timeout) */
     useEffect(() => {
         if (images.length <= 1) return;
 
-        const firstTimeout = setTimeout(() => {
-            setIndex(i => (i + 1) % images.length);
+        let interval: ReturnType<typeof setInterval>;
 
-            const interval = setInterval(() => {
-                setIndex(i => (i + 1) % images.length);
+        const timeout = setTimeout(() => {
+            setIndex((i) => (i + 1) % images.length);
+
+            interval = setInterval(() => {
+                setIndex((i) => (i + 1) % images.length);
             }, 4000);
-
-            return () => clearInterval(interval);
         }, 2000);
 
-        return () => clearTimeout(firstTimeout);
+        return () => {
+            clearTimeout(timeout);
+            if (interval) clearInterval(interval);
+        };
     }, [images]);
+
+    /* 🔥 preload NEXT image */
+    useEffect(() => {
+        if (images.length <= 1) return;
+
+        const nextIndex = (index + 1) % images.length;
+        const img = new Image();
+        img.src = images[nextIndex];
+    }, [index, images]);
 
     return (
         <section className={styles.hero}>
@@ -69,7 +80,7 @@ export default function HeroSection() {
 
             <div className={styles.overlay} />
 
-            {/* dots sirf desktop pe */}
+            {/* dots */}
             {images.length > 1 && (
                 <div className={styles.dots}>
                     {images.map((_, i) => (

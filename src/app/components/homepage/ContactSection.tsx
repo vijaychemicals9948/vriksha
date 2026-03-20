@@ -16,11 +16,13 @@ export default function ContactSection() {
     return (
         <section className={styles.wrapper} aria-labelledby="contact-title">
             {/* Background logo */}
-            <img
-                src="/homepage/logo.png"
+            <Image
+                src="/homepage/logo.webp"
                 alt=""
-                aria-hidden="true"
+                width={300}
+                height={300}
                 className={styles.bgLogo}
+                priority={false}
             />
 
             <OutlineBox>
@@ -34,7 +36,7 @@ export default function ContactSection() {
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
-                                    src="/homepage/contact-image.png"
+                                    src="/homepage/contact-image.webp"
                                     alt="Vriksha studio office"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -108,7 +110,7 @@ export default function ContactSection() {
                     <div className={styles.imageOuterMobile}>
                         <div className={styles.imageBox}>
                             <Image
-                                src="/homepage/contact-image.png"
+                                src="/homepage/contact-image.webp"
                                 alt="Vriksha studio office"
                                 fill
                                 sizes="(max-width: 768px) 100vw"
