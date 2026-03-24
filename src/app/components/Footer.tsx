@@ -10,7 +10,7 @@ export default function Footer() {
             <div className={styles.inner}>
 
                 <Image
-                    src="/logo-dark.png"
+                    src="/logo-dark.webp"
                     alt="Vriksha Logo"
                     width={150}
                     height={120}

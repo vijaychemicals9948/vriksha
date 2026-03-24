@@ -52,7 +52,7 @@ export default function ContactSection() {
                         <div>
                             <div className={styles.logoBox}>
                                 <Image
-                                    src="/homepage/contact-vriksha-logo.png"
+                                    src="/homepage/contact-vriksha-logo.webp"
                                     alt="Vriksha Logo"
                                     width={180}
                                     height={145}

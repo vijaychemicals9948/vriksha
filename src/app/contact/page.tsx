@@ -22,7 +22,7 @@ export default function ContactPage() {
         <section className={styles.wrapper} aria-labelledby="our-story-title">
             {/* Background logo */}
             <img
-                src="/homepage/logo.png"
+                src="/homepage/logo.webp"
                 alt=""
                 aria-hidden="true"
                 className={styles.bgLogo}
@@ -39,7 +39,7 @@ export default function ContactPage() {
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
-                                    src="/homepage/contact-image.png"
+                                    src="/homepage/contact-image.webp"
                                     alt="Vriksha studio office"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -54,7 +54,7 @@ export default function ContactPage() {
                         <div>
                             <div className={styles.logoBox}>
                                 <Image
-                                    src="/homepage/contact-vriksha-logo.png"
+                                    src="/homepage/contact-vriksha-logo.webp"
                                     alt="Vriksha Logo"
                                     width={180}
                                     height={145}
@@ -136,7 +136,7 @@ export default function ContactPage() {
                     <div className={styles.imageOuterMobile}>
                         <div className={styles.imageBox}>
                             <Image
-                                src="/homepage/contact-image.png"
+                                src="/homepage/contact-image.webp"
                                 alt="Vriksha studio office"
                                 fill
                                 sizes="(max-width: 768px) 100vw"

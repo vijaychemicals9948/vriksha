@@ -116,7 +116,7 @@ export default function OurProductsSection({ hideOutline = false }: Props) {
                         <div className={styles.imageOuter}>
                             <div className={styles.imageBox}>
                                 <Image
-                                    src="/homepage/our-products.jpg"
+                                    src="/homepage/our-products.webp"
                                     alt="Our products"
                                     fill
                                     sizes="(max-width: 768px) 100vw, 100vw"
