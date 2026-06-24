@@ -101,3 +101,13 @@
     background: #db4437;
     color: white;
 }
+
+
+.credit a {
+    color: inherit;
+    text-decoration: none;
+}
+
+    .credit a:hover {
+        text-decoration: underline;
+    }

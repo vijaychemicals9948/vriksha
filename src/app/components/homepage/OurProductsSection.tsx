@@ -100,9 +100,15 @@ const PRODUCT_LIST: ProductCategory[] = [
 ];
 
 
-type Props = { hideOutline?: boolean };
+type Props = {
+    hideOutline?: boolean;
+    products?: ProductCategory[];
+};
 
-export default function OurProductsSection({ hideOutline = false }: Props) {
+export default function OurProductsSection({
+    hideOutline = false,
+    products = PRODUCT_LIST,
+}: Props) {
     return (
         <section className={styles.wrapper} aria-labelledby="our-products-title">
             <OutlineBox delay={600} hideOutline={hideOutline}>
@@ -130,7 +136,7 @@ export default function OurProductsSection({ hideOutline = false }: Props) {
                     {/* RIGHT */}
                     <div className={styles.right}>
                         <ul className={styles.catList}>
-                            {PRODUCT_LIST.map((cat) => (
+                            {products.map((cat) => (
                                 <li key={cat.href}>
                                     <Link
                                         href={cat.href}

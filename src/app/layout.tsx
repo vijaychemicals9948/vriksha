@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+import SiteChrome from "./components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "Vriksha - Cultural Gift Shop",
@@ -26,10 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

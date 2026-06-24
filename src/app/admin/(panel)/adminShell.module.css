@@ -1,0 +1,126 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 272px minmax(0, 1fr);
+  background: #f7f5ef;
+  color: #27231e;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 18px;
+  background: #fffdf8;
+  border-right: 1px solid #dfd8ca;
+}
+
+.brand {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px 18px;
+  color: #253723;
+  text-decoration: none;
+  border-bottom: 1px solid #e7e0d3;
+}
+
+.brand span {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.brand strong {
+  color: #7b5a22;
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: grid;
+  gap: 6px;
+}
+
+.navLink {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 12px;
+  border-radius: 6px;
+  color: #554c40;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navLink:hover {
+  color: #243d26;
+  background: #f0eadf;
+}
+
+.active {
+  color: #ffffff;
+  background: #315c37;
+}
+
+.active:hover {
+  color: #ffffff;
+  background: #315c37;
+}
+
+.account {
+  margin-top: auto;
+  display: grid;
+  gap: 12px;
+  padding: 14px 10px 0;
+  border-top: 1px solid #e7e0d3;
+}
+
+.account span {
+  overflow: hidden;
+  color: #6c6256;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account button {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #d6cdbf;
+  border-radius: 6px;
+  color: #4e3521;
+  background: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.content {
+  min-width: 0;
+  padding: 28px;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content {
+    padding: 18px;
+  }
+}

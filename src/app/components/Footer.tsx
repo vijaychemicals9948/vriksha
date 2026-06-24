@@ -57,7 +57,16 @@ export default function Footer() {
                 <p className={styles.copy}>© 2025 Vriksha. All rights reserved.</p>
 
                 <p className={styles.credit}>
-                    Designed & Developed by <strong>Listen DESIGNER</strong>
+                    Developed by{" "}
+                    <strong>
+                        <a
+                            href="https://www.listendesigner.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            ListenDesigner
+                        </a>
+                    </strong>
                 </p>
             </div>
         </footer>

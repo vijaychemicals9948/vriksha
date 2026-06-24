@@ -1,82 +1,31 @@
-﻿//src/app/products/[slug]/[subcategory]/page.tsx
-
-"use client";
-
-import { useParams, notFound } from "next/navigation";
-import { useState } from "react";
-
+//src/app/products/[slug]/[subcategory]/page.tsx
+import { notFound } from "next/navigation";
 import HeroCover from "@/app/components/products/HeroCover";
-import ProductGrid from "@/app/components/products/ProductGrid";
-import ImageModal from "@/app/components/products/ImageModal";
+import ProductGallery from "@/app/components/products/ProductGallery";
+import { getPublicCategory } from "@/lib/catalog";
 
-import { PRODUCT_CATEGORIES } from "@/data/productsData";
+export const dynamic = "force-dynamic";
 
-export default function SubCategoryPage() {
-    const params = useParams();
+type PageProps = {
+  params: Promise<{ slug: string; subcategory: string }>;
+};
 
-    const slug = Array.isArray(params.slug)
-        ? params.slug[0]
-        : params.slug;
+export default async function SubCategoryPage({ params }: PageProps) {
+  const { slug, subcategory: subSlug } = await params;
+  const category = await getPublicCategory(slug);
 
-    const subSlug = Array.isArray(params.subcategory)
-        ? params.subcategory[0]
-        : params.subcategory;
+  if (!category?.subcategories?.length) return notFound();
 
-    // modal state
-    const [modalOpen, setModalOpen] = useState(false);
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const subcategory = category.subcategories.find((item) => item.slug === subSlug);
+  if (!subcategory?.products?.length) return notFound();
 
-    // parent category
-    const parent =
-        PRODUCT_CATEGORIES[slug as keyof typeof PRODUCT_CATEGORIES];
-
-    if (!parent?.subcategories) return notFound();
-
-
-    // current subcategory
-    const subcategory = parent.subcategories.find(
-        (s) => s.slug === subSlug
-    );
-
-    if (!subcategory) return notFound();
-
-    return (
-        <>
-            {/* 🔹 Hero / Banner */}
-            <HeroCover
-                desktopSrc={subcategory.banner}
-                mobileSrc={subcategory.mobileBanner}
-            />
-
-
-
-            {/* 🔹 Products Grid */}
-            <ProductGrid
-                products={subcategory.products}
-                onOpen={(index: number) => {
-                    setActiveIndex(index);
-                    setModalOpen(true);
-                }}
-            />
-
-            {/* 🔹 Image Modal */}
-            <ImageModal
-                products={subcategory.products}
-                open={modalOpen}
-                activeIndex={activeIndex}
-                onClose={() => {
-                    setModalOpen(false);
-                    setActiveIndex(null);
-                }}
-                onMove={(dir: 1 | -1) => {
-                    if (activeIndex === null) return;
-                    setActiveIndex(
-                        (activeIndex + dir + subcategory.products.length) %
-                        subcategory.products.length
-                    );
-                }}
-            />
-        </>
-    );
+  return (
+    <>
+      <HeroCover
+        desktopSrc={subcategory.banner}
+        mobileSrc={subcategory.mobileBanner}
+      />
+      <ProductGallery products={subcategory.products} />
+    </>
+  );
 }
-

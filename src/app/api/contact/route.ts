@@ -1,12 +1,40 @@
 import { Resend } from "resend";
+import { FieldValue } from "firebase-admin/firestore";
+import { adminDb } from "@/lib/firebase/admin";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+function escapeHtml(value: unknown) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
 
 export async function POST(req: Request) {
     try {
         const body = await req.json();
 
         const { firstName, lastName, email, phone, message } = body;
+        const safe = {
+            firstName: escapeHtml(firstName),
+            lastName: escapeHtml(lastName),
+            email: escapeHtml(email),
+            phone: escapeHtml(phone),
+            message: escapeHtml(message),
+        };
+
+        await adminDb.collection("inquiries").add({
+            firstName: String(firstName ?? ""),
+            lastName: String(lastName ?? ""),
+            email: String(email ?? ""),
+            phone: String(phone ?? ""),
+            message: String(message ?? ""),
+            status: "new",
+            createdAt: FieldValue.serverTimestamp(),
+        });
 
         // EMAIL TO ADMIN
         await resend.emails.send({
@@ -26,13 +54,13 @@ export async function POST(req: Request) {
 
           <h3>Customer Details</h3>
 
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Name:</strong> ${safe.firstName} ${safe.lastName}</p>
+          <p><strong>Email:</strong> ${safe.email}</p>
+          <p><strong>Phone:</strong> ${safe.phone}</p>
 
           <h3>Message</h3>
           <p style="background:#f4f4f4;padding:15px;border-radius:6px;">
-            ${message}
+            ${safe.message}
           </p>
 
           <hr style="margin:30px 0;" />
@@ -58,7 +86,7 @@ export async function POST(req: Request) {
 
           <h2 style="color:#2e7d32;">Thank You for Contacting Vriksha</h2>
 
-          <p>Hi ${firstName},</p>
+          <p>Hi ${safe.firstName},</p>
 
           <p>
           Thank you for reaching out to <strong>Vriksha - Indian Home Decor Studio</strong>.

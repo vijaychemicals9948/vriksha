@@ -4,7 +4,7 @@
 import styles from "./ProductGrid.module.css";
 
 export type Product = {
-    id: number;
+    id: number | string;
     title: string;
     img: string;
     zoomImg?: string;
